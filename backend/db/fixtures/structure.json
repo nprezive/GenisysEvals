@@ -1,0 +1,1115 @@
+[
+  {
+    "model": "db.user",
+    "pk": 1,
+    "fields": {
+      "username": "collinwelker"
+    }
+  },
+  {
+    "model": "db.user",
+    "pk": 200,
+    "fields": {
+      "username": "lanceure"
+    }
+  },
+  {
+    "model": "db.user",
+    "pk": 33,
+    "fields": {
+      "username": "cadenmahoney"
+    }
+  },
+  {
+    "model": "db.user",
+    "pk": 27,
+    "fields": {
+      "username": "trevororgill"
+    }
+  },
+  {
+    "model": "db.user",
+    "pk": 69,
+    "fields": {
+      "username": "codysquadroni"
+    }
+  },
+  {
+    "model": "db.examtype",
+    "pk": 1,
+    "fields": {
+      "name": "Online",
+      "description": "Online"
+    }
+  },
+  {
+    "model": "db.examtype",
+    "pk": 2,
+    "fields": {
+      "name": "ScanTron",
+      "description": "ScanTron"
+    }
+  },
+  {
+    "model": "db.examtype",
+    "pk": 3,
+    "fields": {
+      "name": "Paper",
+      "description": "Paper"
+    }
+  },
+  {
+    "model": "db.examtype",
+    "pk": 4,
+    "fields": {
+      "name": "Survey",
+      "description": "Survey"
+    }
+  },
+  {
+    "model": "db.examtype",
+    "pk": 5,
+    "fields": {
+      "name": "Evaluation",
+      "description": "Evaluation"
+    }
+  },
+  {
+    "model": "db.examtype",
+    "pk": 6,
+    "fields": {
+      "name": "Download",
+      "description": "Download"
+    }
+  },
+  {
+    "model": "db.examtype",
+    "pk": 7,
+    "fields": {
+      "name": "Attendance",
+      "description": "Attendance"
+    }
+  },
+  {
+    "model": "db.examtype",
+    "pk": 8,
+    "fields": {
+      "name": "Kiosk",
+      "description": "Kiosk"
+    }
+  },
+  {
+    "model": "db.questiontype",
+    "pk": 1,
+    "fields": {
+      "name": "Multiple Choice",
+      "template": "<p></p>"
+    }
+  },
+  {
+    "model": "db.questiontype",
+    "pk": 2,
+    "fields": {
+      "name": "Multiple Response",
+      "template": "<p></p>"
+    }
+  },
+  {
+    "model": "db.questiontype",
+    "pk": 3,
+    "fields": {
+      "name": "Short Answer",
+      "template": "<p></p>"
+    }
+  },
+  {
+    "model": "db.questiontype",
+    "pk": 4,
+    "fields": {
+      "name": "Essay",
+      "template": "<p></p>"
+    }
+  },
+  {
+    "model": "db.questiontype",
+    "pk": 5,
+    "fields": {
+      "name": "Matching",
+      "template": "<p></p>"
+    }
+  },
+  {
+    "model": "db.questiontype",
+    "pk": 6,
+    "fields": {
+      "name": "Sequencing",
+      "template": "<p></p>"
+    }
+  },
+  {
+    "model": "db.questiontype",
+    "pk": 7,
+    "fields": {
+      "name": "File Upload",
+      "template": "<p></p>"
+    }
+  },
+  {
+    "model": "db.questiontype",
+    "pk": 8,
+    "fields": {
+      "name": "FormBuilder",
+      "template": "<p></p>"
+    }
+  },
+  {
+    "model": "db.questiontype",
+    "pk": 9,
+    "fields": {
+      "name": "True False",
+      "template": "<p></p>"
+    }
+  },
+  {
+    "model": "db.question",
+    "pk": 1,
+    "fields": {
+      "question_type_id": 1,
+      "sequence": 1,
+      "weight": 1,
+      "text": "Which of the following type of variables are sequences of characters?"
+    }
+  },
+  {
+    "model": "db.question",
+    "pk": 2,
+    "fields": {
+      "question_type_id": 1,
+      "sequence": 2,
+      "weight": 1,
+      "text": "Which of the following is correct about NULL?"
+    }
+  },
+  {
+    "model": "db.question",
+    "pk": 3,
+    "fields": {
+      "question_type_id": 1,
+      "sequence": 3,
+      "weight": 1,
+      "text": "Which of the following type of variables are whole numbers, without a decimal point, like 4195?"
+    }
+  },
+  {
+    "model": "db.question",
+    "pk": 4,
+    "fields": {
+      "question_type_id": 9,
+      "sequence": 4,
+      "weight": 1,
+      "text": "Is I smart?",
+      "settings": {
+        "answer": false
+      }
+    }
+  },
+  {
+    "model": "db.question",
+    "pk": 5,
+    "fields": {
+      "question_type_id": 2,
+      "sequence": 5,
+      "weight": 1,
+      "text": "Choose all that are correct:"
+    }
+  },
+  {
+    "model": "db.question",
+    "pk": 6,
+    "fields": {
+      "question_type_id": 3,
+      "sequence": 6,
+      "weight": 1,
+      "text": "Fill in the blank: Trevor is _______.",
+      "settings": {
+        "answers": [
+          "Cool",
+          "Special",
+          "Meathead"
+        ]
+      }
+    }
+  },
+  {
+    "model": "db.question",
+    "pk": 7,
+    "fields": {
+      "question_type_id": 4,
+      "sequence": 7,
+      "weight": 1,
+      "text": "Write a 3 paragraph essay on why Vue is amazing."
+    }
+  },
+  {
+    "model": "db.question",
+    "pk": 8,
+    "fields": {
+      "question_type_id": 5,
+      "sequence": 8,
+      "weight": 1,
+      "text": "Match the correct answer:",
+      "settings": {
+        "options": [
+          {
+            "text": "Trevor",
+            "answer": 0
+          },
+          {
+            "text": "Caden",
+            "answer": 1
+          },
+          {
+            "text": "Collin",
+            "answer": 2
+          }
+        ],
+        "distractors": [
+          "Awesome",
+          "Almost Awesome",
+          "A little special"
+        ]
+      }
+    }
+  },
+  {
+    "model": "db.questionset",
+    "pk": 1,
+    "fields": {
+      "name": "Collin's Question Set"
+    }
+  },
+  {
+    "model": "db.exam",
+    "pk": 1,
+    "fields": {
+      "exam_type_id": 1,
+      "name": "Collin's Exam",
+      "created": "2017-02-23T14:40:54.616Z",
+      "archived": null,
+      "settings": {
+        "Sharing": {
+          "targetedUsers": [
+            1
+          ]
+        },
+        "ExamInfo": {
+          "returnURL": "chitester.weber.edu",
+          "owner": "Collin Welker",
+          "instructionsToStudents": "",
+          "instructionsToSelf": "",
+          "timeLimit": 60,
+          "deliveryID": 14321,
+          "instructionsToOther": "",
+          "consentGroup": "yes",
+          "scoreReductionDate": null,
+          "dateRange": {
+            "from": "2017-07-20T18:25:43.511Z",
+            "to": "2017-12-12T18:25:43.511Z"
+          },
+          "type": "online",
+          "linkToExam": "https://localhost:8080/#/takeexam/"
+        },
+        "Feedback": {
+          "duringExam": false,
+          "scoreUponCompletion": true,
+          "scoreFeedback": [
+            {
+              "score": 3,
+              "message": "Good job"
+            },
+            {
+              "score": 5,
+              "message": "Great job!"
+            }
+          ],
+          "scoreLessThanAboveFeedback": "A message",
+          "duringReview": false
+        },
+        "Notifications": {
+          "instructorNotifications": false,
+          "messageGroup": "standard",
+          "beforeExamOpensSelect": "Days",
+          "studentReminders": false,
+          "emailInExam": false,
+          "beforeExamCloses": 0,
+          "beforeExamOpens": 0,
+          "customMessage": "",
+          "beforeExamClosesSelect": "Days"
+        },
+        "ExamAids": {
+          "keepNotes": false,
+          "materials": [
+            "scratch-paper"
+          ],
+          "personalNotes": "",
+          "cueSheets": "",
+          "calculators": [
+            "four-function"
+          ],
+          "dictionaries": [],
+          "otherCalculator": "",
+          "restroomBreak": false,
+          "whitelistedSites": [
+            {
+              "abbreviation": "one",
+              "webAddress": "first"
+            },
+            {
+              "abbreviation": "two",
+              "webAddress": "second"
+            }
+          ]
+        },
+        "Review": {
+          "allowDownload": false,
+          "allowReviewWithoutPassword": false,
+          "whenGroup": "any-time",
+          "allowReviewOfExam": true,
+          "dateRange": {
+            "to": "2017-07-20T18:25:43.511Z",
+            "from": "2017-07-11T18:25:43.511Z"
+          },
+          "allowReviewQuestionsMissed": false,
+          "allowReviewAnyComputer": false,
+          "showCorrectAnswers": false
+        },
+        "Security": {
+          "attempts": "",
+          "audienceGroup": "aud",
+          "privacy": false,
+          "password": ""
+        },
+        "Questions": {
+          "numQuestionsRandomlySelected": null,
+          "receiveQuestionGroup": "all",
+          "presentationGroup": "one",
+          "additional": [
+            "randomize",
+            "go-back"
+          ],
+          "categories": [
+            {
+              "total": 10,
+              "name": "Category 1",
+              "value": 0
+            },
+            {
+              "total": 100,
+              "name": "Category 2",
+              "value": 0
+            },
+            {
+              "total": 5,
+              "name": "Category 3",
+              "value": 0
+            }
+          ]
+        },
+        "Audience": {
+          "targetedStudents": [
+            1
+          ],
+          "targetedCourses": [
+            65
+          ]
+        },
+        "Sites": {
+          "targetedSites": [
+            1,
+            4
+          ]
+        }
+      }
+    }
+  },
+  {
+    "model": "db.exam",
+    "pk": 2,
+    "fields": {
+      "exam_type_id": 1,
+      "name": "Collin's 2nd Exam",
+      "created": "2017-02-23T14:40:54.616Z",
+      "archived": null,
+      "settings": {
+        "Sharing": {
+          "targetedUsers": [
+            1
+          ]
+        },
+        "ExamInfo": {
+          "returnURL": "chitester.weber.edu",
+          "owner": "Collin Welker",
+          "instructionsToStudents": "",
+          "instructionsToSelf": "",
+          "timeLimit": 60,
+          "deliveryID": 14321,
+          "instructionsToOther": "",
+          "consentGroup": "yes",
+          "scoreReductionDate": null,
+          "dateRange": {
+            "from": "2017-07-20T18:25:43.511Z",
+            "to": "2017-12-12T18:25:43.511Z"
+          },
+          "type": "online",
+          "linkToExam": "https://localhost:8080/#/takeexam/"
+        },
+        "Feedback": {
+          "duringExam": false,
+          "scoreUponCompletion": true,
+          "scoreFeedback": [
+            {
+              "score": 3,
+              "message": "Good job"
+            },
+            {
+              "score": 5,
+              "message": "Great job!"
+            }
+          ],
+          "scoreLessThanAboveFeedback": "A message",
+          "duringReview": false
+        },
+        "Notifications": {
+          "instructorNotifications": false,
+          "messageGroup": "standard",
+          "beforeExamOpensSelect": "Days",
+          "studentReminders": false,
+          "emailInExam": false,
+          "beforeExamCloses": 0,
+          "beforeExamOpens": 0,
+          "customMessage": "",
+          "beforeExamClosesSelect": "Days"
+        },
+        "ExamAids": {
+          "keepNotes": false,
+          "materials": [
+            "scratch-paper"
+          ],
+          "personalNotes": "",
+          "cueSheets": "",
+          "calculators": [
+            "four-function"
+          ],
+          "dictionaries": [],
+          "otherCalculator": "",
+          "restroomBreak": false,
+          "whitelistedSites": [
+            {
+              "abbreviation": "one",
+              "webAddress": "first"
+            },
+            {
+              "abbreviation": "two",
+              "webAddress": "second"
+            }
+          ]
+        },
+        "Review": {
+          "allowDownload": false,
+          "allowReviewWithoutPassword": false,
+          "whenGroup": "any-time",
+          "allowReviewOfExam": true,
+          "dateRange": {
+            "to": "2017-07-20T18:25:43.511Z",
+            "from": "2017-07-11T18:25:43.511Z"
+          },
+          "allowReviewQuestionsMissed": false,
+          "allowReviewAnyComputer": false,
+          "showCorrectAnswers": false
+        },
+        "Security": {
+          "attempts": "",
+          "audienceGroup": "aud",
+          "privacy": false,
+          "password": ""
+        },
+        "Questions": {
+          "numQuestionsRandomlySelected": null,
+          "receiveQuestionGroup": "all",
+          "presentationGroup": "one",
+          "additional": [
+            "randomize",
+            "go-back"
+          ],
+          "categories": [
+            {
+              "total": 10,
+              "name": "Category 1",
+              "value": 0
+            },
+            {
+              "total": 100,
+              "name": "Category 2",
+              "value": 0
+            },
+            {
+              "total": 5,
+              "name": "Category 3",
+              "value": 0
+            }
+          ]
+        },
+        "Audience": {
+          "targetedStudents": [
+            1
+          ],
+          "targetedCourses": [
+            65
+          ]
+        },
+        "Sites": {
+          "targetedSites": [
+            1,
+            4
+          ]
+        }
+      }
+    }
+  },
+  {
+    "model": "db.examquestionset",
+    "pk": 1,
+    "fields": {
+      "exam_id": 1,
+      "question_set_id": 1
+    }
+  },
+  {
+    "model": "db.questionsetquestion",
+    "pk": 1,
+    "fields": {
+      "question_set_id": 1,
+      "question_id": 1
+    }
+  },
+  {
+    "model": "db.questionsetquestion",
+    "pk": 2,
+    "fields": {
+      "question_set_id": 1,
+      "question_id": 2
+    }
+  },
+  {
+    "model": "db.questionsetquestion",
+    "pk": 3,
+    "fields": {
+      "question_set_id": 1,
+      "question_id": 3
+    }
+  },
+  {
+    "model": "db.questionsetquestion",
+    "pk": 4,
+    "fields": {
+      "question_set_id": 1,
+      "question_id": 4
+    }
+  },
+  {
+    "model": "db.questionsetquestion",
+    "pk": 5,
+    "fields": {
+      "question_set_id": 1,
+      "question_id": 5
+    }
+  },
+  {
+    "model": "db.questionsetquestion",
+    "pk": 6,
+    "fields": {
+      "question_set_id": 1,
+      "question_id": 6
+    }
+  },
+  {
+    "model": "db.questionsetquestion",
+    "pk": 7,
+    "fields": {
+      "question_set_id": 1,
+      "question_id": 7
+    }
+  },
+  {
+    "model": "db.questionsetquestion",
+    "pk": 8,
+    "fields": {
+      "question_set_id": 1,
+      "question_id": 8
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 1,
+    "fields": {
+      "question_id": 1,
+      "sequence": 1,
+      "text": "Strings",
+      "correct": true
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 2,
+    "fields": {
+      "question_id": 1,
+      "sequence": 2,
+      "text": "Arrays",
+      "correct": false
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 3,
+    "fields": {
+      "question_id": 1,
+      "sequence": 3,
+      "text": "Objects",
+      "correct": false
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 4,
+    "fields": {
+      "question_id": 1,
+      "sequence": 4,
+      "text": "Resources",
+      "correct": false
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 5,
+    "fields": {
+      "question_id": 2,
+      "sequence": 1,
+      "text": "NULL is a special type that only has one value, NULL.",
+      "correct": false
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 6,
+    "fields": {
+      "question_id": 2,
+      "sequence": 2,
+      "text": "The special constant NULL is cdb.alized by convention, but actually it is case insensitive.",
+      "correct": false
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 7,
+    "fields": {
+      "question_id": 2,
+      "sequence": 3,
+      "text": "Both of the above.",
+      "correct": true
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 8,
+    "fields": {
+      "question_id": 2,
+      "sequence": 4,
+      "text": "None of the above.",
+      "correct": false
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 9,
+    "fields": {
+      "question_id": 3,
+      "sequence": 1,
+      "text": "Integers",
+      "correct": true
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 10,
+    "fields": {
+      "question_id": 3,
+      "sequence": 2,
+      "text": "Doubles",
+      "correct": null
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 11,
+    "fields": {
+      "question_id": 3,
+      "sequence": 3,
+      "text": "Booleans",
+      "correct": null
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 12,
+    "fields": {
+      "question_id": 3,
+      "legacy_question_id": null,
+      "sequence": 4,
+      "text": "Strings",
+      "correct": null
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 13,
+    "fields": {
+      "question_id": 5,
+      "sequence": 1,
+      "text": "This one",
+      "correct": true
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 14,
+    "fields": {
+      "question_id": 5,
+      "sequence": 2,
+      "text": "Nope",
+      "correct": false
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 15,
+    "fields": {
+      "question_id": 5,
+      "sequence": 3,
+      "text": "This one also",
+      "correct": true
+    }
+  },
+  {
+    "model": "db.distractor",
+    "pk": 16,
+    "fields": {
+      "question_id": 5,
+      "sequence": 4,
+      "text": "Not this one",
+      "correct": false
+    }
+  },
+  {
+    "model": "db.role",
+    "pk": 1,
+    "fields": {
+      "name": "student"
+    }
+  },
+  {
+    "model": "db.role",
+    "pk": 2,
+    "fields": {
+      "name": "instructor"
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "learning_context": 7823,
+      "role": 2
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "learning_context": 7823,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "learning_context": 7840,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "learning_context": 10475,
+      "role": 2
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "learning_context": 10475,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 6,
+    "fields": {
+      "user": 69,
+      "learning_context": 7823,
+      "role": 2
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 7,
+    "fields": {
+      "user": 69,
+      "learning_context": 7823,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 8,
+    "fields": {
+      "user": 69,
+      "learning_context": 7840,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 9,
+    "fields": {
+      "user": 69,
+      "learning_context": 10475,
+      "role": 2
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 10,
+    "fields": {
+      "user": 69,
+      "learning_context": 10475,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 11,
+    "fields": {
+      "user": 200,
+      "learning_context": 7823,
+      "role": 2
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 12,
+    "fields": {
+      "user": 200,
+      "learning_context": 7823,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 13,
+    "fields": {
+      "user": 200,
+      "learning_context": 7840,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 14,
+    "fields": {
+      "user": 200,
+      "learning_context": 10475,
+      "role": 2
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 15,
+    "fields": {
+      "user": 200,
+      "learning_context": 10475,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 16,
+    "fields": {
+      "user": 27,
+      "learning_context": 7823,
+      "role": 2
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 17,
+    "fields": {
+      "user": 27,
+      "learning_context": 7823,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 18,
+    "fields": {
+      "user": 27,
+      "learning_context": 7840,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 19,
+    "fields": {
+      "user": 27,
+      "learning_context": 10475,
+      "role": 2
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 20,
+    "fields": {
+      "user": 27,
+      "learning_context": 10475,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 21,
+    "fields": {
+      "user": 33,
+      "learning_context": 7823,
+      "role": 2
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 22,
+    "fields": {
+      "user": 33,
+      "learning_context": 7823,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 23,
+    "fields": {
+      "user": 33,
+      "learning_context": 7840,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 24,
+    "fields": {
+      "user": 33,
+      "learning_context": 10475,
+      "role": 2
+    }
+  },
+  {
+    "model": "db.enrollment",
+    "pk": 25,
+    "fields": {
+      "user": 33,
+      "learning_context": 10475,
+      "role": 1
+    }
+  },
+  {
+    "model": "db.site",
+    "pk": 1,
+    "fields": {
+      "name": "Any Computer",
+      "description": ""
+    }
+  },
+  {
+    "model": "db.site",
+    "pk": 2,
+    "fields": {
+      "name": "Remote Proctors",
+      "description": ""
+    }
+  },
+  {
+    "model": "db.site",
+    "pk": 3,
+    "fields": {
+      "name": "WSU Testing - Davis",
+      "description": ""
+    }
+  },
+  {
+    "model": "db.site",
+    "pk": 4,
+    "fields": {
+      "name": "WSU Testing - Morgan",
+      "description": "Room 313\r\nNumber: 801-626-6000"
+    }
+  },
+  {
+    "model": "db.site",
+    "pk": 5,
+    "fields": {
+      "name": "WSU Testing - Social Sciences",
+      "description": "Room 343, Contact Information: 801-626-6006"
+    }
+  },
+  {
+    "model": "db.examassociation",
+    "pk": 1,
+    "fields": {
+      "exam": 1,
+      "learning_context": 7823
+    }
+  },
+  {
+    "model": "db.examassociation",
+    "pk": 2,
+    "fields": {
+      "exam": 1,
+      "learning_context": 7840
+    }
+  },
+  {
+    "model": "db.examassociation",
+    "pk": 3,
+    "fields": {
+      "exam": 2,
+      "learning_context": 10475
+    }
+  }
+]

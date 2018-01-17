@@ -1,0 +1,30 @@
+version: '2'
+services:
+  backend:
+    build: ./backend
+    expose:
+      - '8000'
+    volumes:
+      - ./backend:/backend
+    command: python manage.py runserver 0.0.0.0:8000
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/frontend
+      - node_modules:/frontend/node_modules
+  nginx:
+    build: ./nginx
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./nginx/ssl:/certificates
+    volumes_from:
+      - backend
+    links:
+      - backend
+      - frontend
+    environment:
+      - DOMAIN=localhost
+volumes:
+  node_modules:

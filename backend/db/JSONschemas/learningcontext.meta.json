@@ -1,0 +1,93 @@
+//learning_context_type = 9
+
+
+[
+    {
+        "id": "8",
+        "title": "Section",
+        "type": "object",
+        "required": ["banner", "campus", "crn", "section_id", "term_code"],
+        "properties": {
+            "banner": {
+                "default": true,
+                "description": "An explanation about the purpose of this instance.",
+                "examples": [
+                    "True"
+                ],
+                "id": "/properties/banner",
+                "title": "The banner schema.",
+                "type": "boolean"
+            },
+            "campus": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "examples": [
+                    ""
+                ],
+                "id": "/properties/campus",
+                "title": "The campus schema.",
+                "type": "string"
+            },
+            "crn": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "examples": [
+                    ""
+                ],
+                "id": "/properties/crn",
+                "title": "The crn schema.",
+                "type": "string"
+            },
+            "section_id": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "examples": [
+                    ""
+                ],
+                "id": "/properties/section_id",
+                "title": "The section_id schema.",
+                "type": "string"
+            },
+            "term_code": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "examples": [
+                    ""
+                ],
+                "id": "/properties/term_code",
+                "title": "The term_code schema.",
+                "type": "string"
+            }
+        }
+    },
+    {
+        "id": "9",
+        "title": "Person",
+        "type": "object",
+        "required": ["first_name", "last_name"],
+        "properties": {
+            "first_name": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "examples": [
+                    ""
+                ],
+                "id": "/properties/first_name",
+                "title": "The first_name schema.",
+                "type": "string"
+            },
+            "last_name": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "examples": [
+                    ""
+                ],
+                "id": "/properties/last_name",
+                "title": "The last_name schema.",
+                "type": "string"
+            }
+        }
+    }
+]
+
+

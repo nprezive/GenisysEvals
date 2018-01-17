@@ -1,0 +1,31 @@
+version: '2'
+services:
+  backend:
+    restart: always
+    image: genisys/backend:latest
+    expose:
+      - '8000'
+    volumes:
+      - www:/backend/www
+    env_file:
+      - .env
+  frontend:
+    restart: always
+    image: genisys/frontend:latest
+  nginx:
+    restart: always
+    image: genisys/nginx:latest
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes_from:
+      - backend
+    volumes:
+      - ./ssl:/certificates
+    links:
+      - backend
+      - frontend
+    environment:
+      - DOMAIN=${DOMAIN}
+volumes:
+  www:

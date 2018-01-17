@@ -1,0 +1,47 @@
+# Configuration Files
+*.ini
+
+# DB
+*.sqlite
+*.sqlite3
+*.db
+
+# Byte-compiled / Optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / Packaging
+bin/
+develop-eggs/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+node_modules/
+vendor/
+
+# Workspace Files
+/*/.idea/
+.idea/**
+.idea/**/**
+.python-version
+.coveragerc
+.DS_Store
+/backend/auth.log
+
+# venv Folder
+venv/
+env
+
+# misc
+/backend/FirstRunComplete
+.remote-sync.json
+/backend/genisys/settings

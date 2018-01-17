@@ -1,0 +1,141 @@
+/* =================== */
+/*     Our Styles      */
+/* =================== */
+
+.login {
+  background-image: url("../img/stock/school.webp");
+  background-size: 100% 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* =================== */
+/*    Custom Text Sizes    */
+/* =================== */
+
+.font-size-10 {
+  font-size: 10px;
+}
+.font-size-12 {
+  font-size: 12px;
+}
+.font-size-14 {
+  font-size: 14px;
+}
+.font-size-15 {
+  font-size: 15px;
+}
+.font-size-16 {
+  font-size: 16px;
+}
+.font-size-18 {
+  font-size: 18px;
+}
+.font-size-20 {
+  font-size: 20px;
+}
+.font-size-22 {
+  font-size: 22px;
+}
+.font-size-24 {
+  font-size: 24px;
+}
+.font-size-25 {
+  font-size: 25px;
+}
+
+/* =================== */
+/*    Custom CoreUI    */
+/* =================== */
+
+#sidebar-minimized-userMenu {
+   display: none;
+ }
+
+.app-header.navbar .navbar-brand {
+  background-size: 100px auto !important;
+}
+
+/* Sidebar */
+.sidebar .sidebar-header {
+  height: 200px;
+  padding-bottom: 10px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .sidebar-header .img-avatar {
+  width: 80px;
+  margin: 20px auto 10px;
+  border-radius: 50em;
+}
+
+.sidebar-minimized .sidebar-header {
+  display: none;
+}
+
+img.img-avatar-minimize {
+  width: 35px;
+  border-radius: 50em;
+  margin-left: 8px;
+}
+
+/* Search */
+.navbar .form-inline .form-control, .navbar .form-inline .input-mini, .navbar .form-inline .input-mini, .navbar .form-inline .input-group > .ui-select-bootstrap > input.ui-select-search.form-control {
+  min-width: 250px;
+  color: #d1d4d7;
+  border: 0;
+}
+
+.navbar .form-inline .form-control::placeholder, .navbar .form-inline .input-mini::placeholder, .navbar .form-inline .input-mini::placeholder, .navbar .form-inline .input-group > .ui-select-bootstrap > input.ui-select-search.form-control::placeholder {
+  color: #d1d4d7;
+}
+
+.navbar .form-inline .form-control::-webkit-input-placeholder, .navbar .form-inline .input-mini::-webkit-input-placeholder, .navbar .form-inline .input-mini::-webkit-input-placeholder, .navbar .form-inline .input-group > .ui-select-bootstrap > input.ui-select-search.form-control::-webkit-input-placeholder {
+  color: #d1d4d7;
+}
+
+.navbar .form-inline .form-control:-moz-placeholder, .navbar .form-inline .input-mini:-moz-placeholder, .navbar .form-inline .input-mini:-moz-placeholder, .navbar .form-inline .input-group > .ui-select-bootstrap > input.ui-select-search.form-control:-moz-placeholder {
+  color: #d1d4d7;
+}
+
+.navbar .form-inline .form-control::-moz-placeholder, .navbar .form-inline .input-mini::-moz-placeholder, .navbar .form-inline .input-mini::-moz-placeholder, .navbar .form-inline .input-group > .ui-select-bootstrap > input.ui-select-search.form-control::-moz-placeholder {
+  color: #d1d4d7;
+}
+
+.navbar .form-inline .form-control:-ms-input-placeholder, .navbar .form-inline  .input-mini:-ms-input-placeholder, .navbar .form-inline .input-mini:-ms-input-placeholder, .navbar .form-inline .input-group > .ui-select-bootstrap > input.ui-select-search.form-control:-ms-input-placeholder {
+  color: #d1d4d7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

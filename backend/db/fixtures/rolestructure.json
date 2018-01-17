@@ -1,0 +1,42 @@
+[
+  {
+    "model": "db.role",
+    "pk": 1,
+    "fields": {
+      "name": "user",
+      "rights": [
+        "user_view_self",
+        "enrollments_view_self",
+        "learningcontext_view_self",
+        "exam_view_self"
+      ]
+    }
+  },
+  {
+    "model": "db.role",
+    "pk": 2,
+    "fields": {
+      "name": "student",
+      "rights": [
+        "exam_view_context",
+        "eval_view_context"
+      ]
+    }
+  },
+  {
+    "model": "db.role",
+    "pk": 3,
+    "fields": {
+      "name": "instructor",
+      "rights": [
+        "user_view_context",
+        "learningcontext_view_context",
+        "enrollments_view_context",
+        "exam_standard_context",
+        "question_standard_context",
+        "examassociation_standard_context",
+        "examassociation_delete_context",
+      ]
+    }
+  }
+]
