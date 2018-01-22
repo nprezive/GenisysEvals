@@ -7,7 +7,7 @@ from jsoneditor.fields.postgres_jsonfield import JSONField
 class User(AbstractUser):
     picture_id = models.CharField(max_length=100, blank=True, null=False, default="")
     student_id = models.CharField(max_length=9, blank=True, null=False, default="")
-    password = models.CharField(max_length=32, blank=True, null=True, default="")
+    password = models.CharField(max_length=255, blank=True, null=True, default="")
     phone = models.CharField(max_length=30, blank=True, null=True)
     email = models.EmailField(blank=True, null=False, default="")
     enrollments = models.ManyToManyField(to='LearningContext', through='Enrollment', related_name='enrollments')

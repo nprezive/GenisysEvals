@@ -169,7 +169,7 @@ class LDAPBackend(object):
             user.is_superuser = True
             user.is_active = True
 
-        if any(b'cadenmahoney' in bstr for bstr in ldapuser['attrs']['sAMAccountName']):
+        if any(b'collinwelker' in bstr for bstr in ldapuser['attrs']['sAMAccountName']):
             user.is_superuser = True
             user.is_active = True
 

@@ -1,6 +1,6 @@
 FROM python:3.5-alpine
 
-RUN apk add -q --no-cache supervisor postgresql-dev g++ python3-dev musl-dev openldap-clients openldap-dev openssl-dev libffi-dev freetds freetds-dev libc-dev unixodbc-dev tzdata
+RUN apk add -q --no-cache supervisor postgresql-dev g++ python3-dev musl-dev openssl-dev libffi-dev freetds freetds-dev libc-dev unixodbc-dev tzdata
 
 RUN mkdir /backend
 WORKDIR /backend

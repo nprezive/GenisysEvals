@@ -1,5 +1,4 @@
 from django.conf.urls import url, include
-from convert import views as convert
 from .views import examassociation_views as examassociation
 from .views import examquestionset_views as examquestionset
 from .views import examtype_views as examtype
@@ -26,7 +25,6 @@ from .views import proctor_views as proctor
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'convert', convert.ConvertViewSet)
 router.register(r'examassociation', examassociation.ExamAssociationViewSet)
 router.register(r'examquestionset', examquestionset.ExamQuestionSetViewSet)
 router.register(r'examtype', examtype.ExamTypeViewSet)

@@ -1,6 +1,5 @@
 import os, sys
 from envparse import env
-import ldap
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -71,8 +70,6 @@ DATABASES = {
 
 }
 
-DATABASE_ROUTERS = ['convert.routers.ConvertRouter',]
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'US/Mountain'
@@ -91,16 +88,8 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR+"/../", 'www', 'media')
 
-AUTH_LDAP_CONNECTION_OPTIONS = {
-    ldap.OPT_REFERRALS: 0,
-    ldap.OPT_X_TLS_REQUIRE_CERT: ldap.OPT_X_TLS_NEVER,
-    ldap.OPT_X_TLS_CRLCHECK: ldap.OPT_X_TLS_NEVER,
-    ldap.OPT_X_TLS_NEWCTX: 0,
-    ldap.OPT_SIZELIMIT: 2400
-}
-
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend'
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 AUTH_USER_MODEL = 'db.User'
