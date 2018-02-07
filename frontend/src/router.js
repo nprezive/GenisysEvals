@@ -78,6 +78,11 @@ export default new VueRouter({
           component: load('containers/Checkin')
         },
         {
+          path: 'evals',
+          name: 'Evaluation',
+          component: load('views/Evaluations')
+        },
+        {
           path: 'library',
           name: 'Library',
           component: load('containers/Library'),
