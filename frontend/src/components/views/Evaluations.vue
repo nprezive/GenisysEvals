@@ -5,12 +5,49 @@
         <q-tabs align="justify" inverted
                 style="background-color: white">
           <!--TODO at tab change call newProctor()-->
-          <q-tab default label="Evaluations" slot="title"
+          <q-tab default label="My Reports" slot="title"
                  name="tab-1"></q-tab>
           <q-tab-pane name="tab-1" class="p-0" v-if="proctors.length > 0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
-                Evauluations!
+                My Reports
+              </q-toolbar-title>
+              <q-btn color="primary">Promotion and Tenure</q-btn>
+              <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
+                <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
+                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Need Help?</q-tooltip>
+                </q-fab-action>
+                <q-fab-action color="primary" @click="toast('alarm')" icon="fa-user">
+                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Create A Evaluation</q-tooltip>
+                </q-fab-action>
+              </q-fab>
+            </q-toolbar>
+            <div class="row clearfix p-1">
+              <div class="col-md-12 col-lg-4 clearfix">
+                <q-card>
+                  <q-card-title class="bg-primary">
+                    <b>My Reports?</b>
+                  </q-card-title>
+                  <q-card-main class="card-block pt-2">
+                    <p>
+                      *Put a "Promotion and Tenure" Button at the top*
+                      A list of all teacher evals. Make my tests public? Show my tests to the Chair or Deans?
+                    </p>
+                    <p>I was copied from Proctoring.vue</p>
+                  </q-card-main>
+                </q-card>
+              </div>
+              <div class="col-md-12 col-lg-8 clearfix">
+
+              </div>
+            </div>
+          </q-tab-pane>
+          <q-tab label="My Completion Lists" slot="title"
+                 name="tab-2"></q-tab>
+          <q-tab-pane name="tab-2" class="p-0">
+            <q-toolbar inverted color="dark" class="bg-light">
+              <q-toolbar-title>
+                My Completion Lists
               </q-toolbar-title>
               <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
                 <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
@@ -25,11 +62,11 @@
               <div class="col-md-12 col-lg-4 clearfix">
                 <q-card>
                   <q-card-title class="bg-primary">
-                    <b>What is Evaluations?</b>
+                    <b>My Completion Lists?</b>
                   </q-card-title>
                   <q-card-main class="card-block pt-2">
                     <p>
-                      Hello World!
+                      Duplicate what is in the presentation slides. Who have taken surveys.
                     </p>
                     <p>I was copied from Proctoring.vue</p>
                   </q-card-main>
@@ -40,12 +77,14 @@
               </div>
             </div>
           </q-tab-pane>
-          <q-tab label="My Evaluations" slot="title"
-                 name="tab-2"></q-tab>
-          <q-tab-pane name="tab-2" class="p-0">
+
+
+          <q-tab label="My Rankings" slot="title"
+                 name="tab-3"></q-tab>
+          <q-tab-pane name="tab-3" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
-                Proctor Tools
+                My Rankings
               </q-toolbar-title>
               <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
                 <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
@@ -56,28 +95,104 @@
                 </q-fab-action>
               </q-fab>
             </q-toolbar>
-            <div class="row">
-              <div class="col-2">
-                <q-list no-border separator link>
-                  <q-item :class="{active: index === setActiveProctor()}"
-                          v-for="(proctor, index) in proctors"
-                          :key="index" @click="changeProctor(proctor, index)">
-                    <q-item-side color="primary" icon="fa-slideshare"></q-item-side>
-                    <q-item-main>
-                      <q-item-tile label class="font-sm">
-                        {{proctor.firstname + " " + proctor.lastname}}
-                      </q-item-tile>
-                    </q-item-main>
-                  </q-item>
-                </q-list>
-              </div>
-              <div class="col-10">
+            <div class="row clearfix p-1">
+              <div class="col-md-12 col-lg-4 clearfix">
                 <q-card>
-                  <Proctor :proctor="activeProctor" :setDefaultProctor="setDefaultProctor"></Proctor>
+                  <q-card-title class="bg-primary">
+                    <b>My Rankings?</b>
+                  </q-card-title>
+                  <q-card-main class="card-block pt-2">
+                    <p>
+                      Instructor tools screenshots
+                    </p>
+                    <p>I was copied from Proctoring.vue</p>
+                  </q-card-main>
                 </q-card>
+              </div>
+              <div class="col-md-12 col-lg-8 clearfix">
+
               </div>
             </div>
           </q-tab-pane>
+
+
+
+          <q-tab label="Shared Evals" slot="title"
+                 name="tab-4"></q-tab>
+          <q-tab-pane name="tab-4" class="p-0">
+            <q-toolbar inverted color="dark" class="bg-light">
+              <q-toolbar-title>
+                My Reports
+              </q-toolbar-title>
+              <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
+                <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
+                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Need Help?</q-tooltip>
+                </q-fab-action>
+                <q-fab-action color="primary" @click="toast('alarm')" icon="fa-user">
+                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Create A Evaluation</q-tooltip>
+                </q-fab-action>
+              </q-fab>
+            </q-toolbar>
+            <div class="row clearfix p-1">
+              <div class="col-md-12 col-lg-4 clearfix">
+                <q-card>
+                  <q-card-title class="bg-primary">
+                    <b>My Reports?</b>
+                  </q-card-title>
+                  <q-card-main class="card-block pt-2">
+                    <p>
+                      *Put a "Promotion and Tenure" Button at the top*
+                      A list of all teacher evals. Make my tests public? Show my tests to the Chair or Deans?
+                    </p>
+                    <p>I was copied from Proctoring.vue</p>
+                  </q-card-main>
+                </q-card>
+              </div>
+              <div class="col-md-12 col-lg-8 clearfix">
+
+              </div>
+            </div>
+          </q-tab-pane>
+
+          <q-tab label="User Roles" slot="title"
+                 name="tab-5"></q-tab>
+          <q-tab-pane name="tab-5" class="p-0">
+            <q-toolbar inverted color="dark" class="bg-light">
+              <q-toolbar-title>
+                User Roles
+              </q-toolbar-title>
+              <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
+                <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
+                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Need Help?</q-tooltip>
+                </q-fab-action>
+                <q-fab-action color="primary" @click="toast('alarm')" icon="fa-user">
+                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Create A Evaluation</q-tooltip>
+                </q-fab-action>
+              </q-fab>
+            </q-toolbar>
+            <div class="row clearfix p-1">
+              <div class="col-md-12 col-lg-4 clearfix">
+                <q-card>
+                  <q-card-title class="bg-primary">
+                    <b>User Roles?</b>
+                  </q-card-title>
+                  <q-card-main class="card-block pt-2">
+                    <p>
+                      *Put a "Promotion and Tenure" Button at the top*
+                      A list of all teacher evals. Make my tests public? Show my tests to the Chair or Deans?
+                    </p>
+                    <p>I was copied from Proctoring.vue</p>
+                  </q-card-main>
+                </q-card>
+              </div>
+              <div class="col-md-12 col-lg-8 clearfix">
+
+              </div>
+            </div>
+          </q-tab-pane>
+
+
+
         </q-tabs>
       </div>
     </div>
