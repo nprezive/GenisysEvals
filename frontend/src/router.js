@@ -81,6 +81,41 @@ export default new VueRouter({
           path: 'evals',
           name: 'Evaluation',
           component: load('views/Evaluations')
+          /*,
+          //Never got this working... Going to try templates instead
+          children: [
+            {
+              path: '/reports',
+              name: 'My Reports',
+              component: load('views/evaluations/MyReports'),
+              props: true // not sure what this does
+            },
+            {
+              path: '/completion',
+              name: 'My Completion Lists',
+              component: load('views/evaluations/CompletionLists'),
+              props: true // not sure what this does
+            },
+            {
+              path: '/rankings',
+              name: 'My Rankings',
+              component: load('views/evaluations/MyRankings'),
+              props: true // not sure what this does
+            },
+            {
+              path: '/shared',
+              name: 'Shared Evals',
+              component: load('views/evaluations/SharedEvals'),
+              props: true // not sure what this does
+            },
+            {
+              path: '/roles',
+              name: 'User Roles',
+              component: load('views/evaluations/UserRoles'),
+              props: true // not sure what this does
+            }
+          ]
+          */
         },
         {
           path: 'library',
