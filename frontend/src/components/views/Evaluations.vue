@@ -38,9 +38,6 @@
             <CompletionLists></CompletionLists>
           </q-tab-pane>
 
-
-
-
           <q-tab label="My Rankings" slot="title"
                  name="tab-3"></q-tab>
           <q-tab-pane name="tab-3" class="p-0">
@@ -59,8 +56,6 @@
             </q-toolbar>
             <MyRankings></MyRankings>
           </q-tab-pane>
-
-
 
           <q-tab label="Public Evals" slot="title"
                  name="tab-4"></q-tab>
