@@ -60,26 +60,28 @@
 <script>
 export default {
   data () {
-      return {
-        sSemesterIndex: 0
-      }
+    return {
+      sSemesterIndex: 0
+    }
   },
   computed: {
-    semester() {
+    semester () {
       // APICall to get student's proctors
       let apiCall = [
         {
           id: 12,
           semester: 'Spring 2018',
           isActive: true,
-          classes : [
+          classes: [
             {
               id: 1234,
               crn: '22325',
               className: 'CS1400',
               taken: '22',
               total: '35',
-              isCourseEvaluated: true
+              isCourseEvaluated: true,
+              isPublic: true,
+              isSharedDeans: true
             },
             {
               id: 1233,
@@ -87,7 +89,9 @@ export default {
               className: 'CS1410',
               taken: '19',
               total: '25',
-              isCourseEvaluated: false
+              isCourseEvaluated: false,
+              isPublic: true,
+              isSharedDeans: true
             },
             {
               id: 12334,
@@ -95,7 +99,9 @@ export default {
               className: 'CS3100',
               taken: '18',
               total: '22',
-              isCourseEvaluated: true
+              isCourseEvaluated: true,
+              isPublic: true,
+              isSharedDeans: true
             },
             {
               id: 12334,
@@ -103,7 +109,9 @@ export default {
               className: 'CS4110',
               taken: '9',
               total: '22',
-              isCourseEvaluated: true
+              isCourseEvaluated: true,
+              isPublic: true,
+              isSharedDeans: true
             }
           ]
         },
@@ -111,7 +119,7 @@ export default {
           id: 13,
           semester: 'Fall 2017',
           isActive: false,
-          classes : [
+          classes: [
             {
               id: 1234,
               crn: '22325',
@@ -119,7 +127,9 @@ export default {
               taken: '22',
               total: '35',
               isCourseEvaluated: true,
-              isActive: true
+              isActive: true,
+              isPublic: true,
+              isSharedDeans: true
             },
             {
               id: 1233,
@@ -127,7 +137,9 @@ export default {
               className: 'CS1410',
               taken: '19',
               total: '25',
-              isCourseEvaluated: false
+              isCourseEvaluated: false,
+              isPublic: true,
+              isSharedDeans: true
             },
             {
               id: 12334,
@@ -135,7 +147,9 @@ export default {
               className: 'CS3100',
               taken: '18',
               total: '22',
-              isCourseEvaluated: true
+              isCourseEvaluated: true,
+              isPublic: true,
+              isSharedDeans: true
             }
           ]
         },
@@ -143,7 +157,7 @@ export default {
           id: 14,
           semester: 'Spring 2017',
           isActive: false,
-          classes : [
+          classes: [
             {
               id: 1234,
               crn: '22325',
@@ -151,7 +165,9 @@ export default {
               taken: '22',
               total: '35',
               isCourseEvaluated: true,
-              isActive: true
+              isActive: true,
+              isPublic: true,
+              isSharedDeans: true
             },
             {
               id: 1233,
@@ -159,7 +175,9 @@ export default {
               className: 'CS1410',
               taken: '19',
               total: '25',
-              isCourseEvaluated: false
+              isCourseEvaluated: false,
+              isPublic: true,
+              isSharedDeans: true
             },
             {
               id: 12334,
@@ -167,7 +185,19 @@ export default {
               className: 'CS3100',
               taken: '18',
               total: '22',
-              isCourseEvaluated: true
+              isCourseEvaluated: true,
+              isPublic: true,
+              isSharedDeans: true
+            },
+            {
+              id: 123343,
+              crn: '223232',
+              className: 'CS3110',
+              taken: '13',
+              total: '22',
+              isCourseEvaluated: true,
+              isPublic: true,
+              isSharedDeans: true
             }
           ]
         }
@@ -177,13 +207,13 @@ export default {
   },
   methods: {
     openModal (semesterID) {
-     for (let i = 0; i < this.semester.length; i++) {
-       if(this.semester[i].id === semesterID) {
-         this.sSemesterIndex = semesterID;
-         this.$refs.basicModal.open();
-         break;
-       } //end if
-     } //end for
+      for (let i = 0; i < this.semester.length; i++) {
+        if (this.semester[i].id === semesterID) {
+          this.sSemesterIndex = semesterID
+          this.$refs.basicModal.open()
+          break
+        }// end if
+      }// end for
     }
   }
 }
