@@ -57,7 +57,7 @@
           <q-tab-pane name="tab-4" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
-                My Reports
+                Public Evaluations
               </q-toolbar-title>
               <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
                 <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
