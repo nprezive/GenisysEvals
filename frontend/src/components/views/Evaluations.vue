@@ -7,20 +7,6 @@
 
           <q-tab default label="My Reports" slot="title" name="tab-1"></q-tab>
           <q-tab-pane name="tab-1" class="p-0">
-            <q-toolbar inverted color="dark" class="bg-light">
-              <q-toolbar-title>
-                My Reports
-              </q-toolbar-title>
-              <q-btn color="primary">Promotion and Tenure</q-btn>
-              <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
-                <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
-                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Need Help?</q-tooltip>
-                </q-fab-action>
-                <q-fab-action color="primary" @click="toast('alarm')" icon="fa-user">
-                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Create A Evaluation</q-tooltip>
-                </q-fab-action>
-              </q-fab>
-            </q-toolbar>
             <MyReports></MyReports>
           </q-tab-pane>
 
@@ -29,17 +15,10 @@
           <q-tab-pane name="tab-2" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
-                Students Who Have Taken Course Summaries
-                 <span slot="subtitle">
-                   If less than 10 surveys have been taken, none will be listed to preserve anonymity.
-                 </span>
               </q-toolbar-title>
             </q-toolbar>
             <CompletionLists></CompletionLists>
           </q-tab-pane>
-
-
-
 
           <q-tab label="My Rankings" slot="title"
                  name="tab-3"></q-tab>
@@ -60,14 +39,12 @@
             <MyRankings></MyRankings>
           </q-tab-pane>
 
-
-
           <q-tab label="Public Evals" slot="title"
                  name="tab-4"></q-tab>
           <q-tab-pane name="tab-4" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
-                My Reports
+                Public Evaluations
               </q-toolbar-title>
               <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
                 <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
