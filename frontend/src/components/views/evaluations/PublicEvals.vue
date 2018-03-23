@@ -1,13 +1,13 @@
 <template>
   <div class="row clearfix p-1">
-              <div class="col-md-12 col-lg-4 clearfix">
+              <!-- <div class="col-md-12 col-lg-4 clearfix">
                 <q-card>
                   <q-card-main class="card-block pt-2">
                       <q-btn color="primary">Go to Course Evals</q-btn>
                   </q-card-main>
                 </q-card>
-              </div>
-              <div class="col-md-12 col-lg-8 clearfix">
+              </div> -->
+              <div class="col-md-12 col-lg-12 clearfix">
                 <q-card>
                   <q-card-main class="card-block pt-2">
                     <p>Instructor can share their course and instructor evaluations with students.</p>
