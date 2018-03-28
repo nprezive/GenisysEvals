@@ -31,7 +31,23 @@
                   </q-card-main>
                 </q-card>
               </div>
-            </div>
+              <div class="row clearfix p-1">
+                <div class="col-md-12 col-lg-12 clearfix">
+                  <q-card v-for="sem in semester">
+                    <q-card-title class="bg-primary">
+                      <b>{{sem.semester}}</b>
+                    </q-card-title>
+                    <q-card-main class="card-block pt-2">
+                      <table style="width: 100%">
+                        <tr v-for="c in sem.classes">
+                          <td><a href="">{{c.className}}{{c.crn}}</a> ({{c.instructorLast}}, {{c.instructorFirst}})</td>
+                        </tr>
+                      </table>
+                    </q-card-main>
+                  </q-card>
+                </div>
+              </div>
+            </div>     
 </template>
 
 <script>
@@ -56,6 +72,8 @@ export default {
               className: 'CS1400',
               taken: '22',
               total: '35',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: true,
               isPublic: true,
               isSharedDeans: true
@@ -66,6 +84,8 @@ export default {
               className: 'CS1410',
               taken: '19',
               total: '25',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: false,
               isPublic: true,
               isSharedDeans: true
@@ -76,6 +96,8 @@ export default {
               className: 'CS3100',
               taken: '18',
               total: '22',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: true,
               isPublic: true,
               isSharedDeans: true
@@ -86,6 +108,8 @@ export default {
               className: 'CS4110',
               taken: '9',
               total: '22',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: true,
               isPublic: true,
               isSharedDeans: true
@@ -103,6 +127,8 @@ export default {
               className: 'CS1400',
               taken: '22',
               total: '35',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: true,
               isActive: true,
               isPublic: true,
@@ -114,6 +140,8 @@ export default {
               className: 'CS1410',
               taken: '19',
               total: '25',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: false,
               isPublic: true,
               isSharedDeans: true
@@ -124,6 +152,8 @@ export default {
               className: 'CS3100',
               taken: '18',
               total: '22',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: true,
               isPublic: true,
               isSharedDeans: true
@@ -141,6 +171,8 @@ export default {
               className: 'CS1400',
               taken: '22',
               total: '35',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: true,
               isActive: true,
               isPublic: true,
@@ -152,6 +184,8 @@ export default {
               className: 'CS1410',
               taken: '19',
               total: '25',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: false,
               isPublic: true,
               isSharedDeans: true
@@ -162,6 +196,8 @@ export default {
               className: 'CS3100',
               taken: '18',
               total: '22',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: true,
               isPublic: true,
               isSharedDeans: true
@@ -172,6 +208,8 @@ export default {
               className: 'CS3110',
               taken: '13',
               total: '22',
+              instructorFirst: 'FirstName',
+              instructorLast: 'LastName',
               isCourseEvaluated: true,
               isPublic: true,
               isSharedDeans: true
