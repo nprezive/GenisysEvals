@@ -5,7 +5,7 @@
         <q-tabs align="justify" inverted
                 style="background-color: white">
 
-          <q-tab default label="My Reports" slot="title" name="tab-1"></q-tab>
+          <q-tab default label="My Evals" slot="title" name="tab-1"></q-tab>
           <q-tab-pane name="tab-1" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
@@ -33,28 +33,9 @@
             <CompletionLists></CompletionLists>
           </q-tab-pane>
 
-          <q-tab label="My Rankings" slot="title"
+          <q-tab label="Public Evals" slot="title"
                  name="tab-3"></q-tab>
           <q-tab-pane name="tab-3" class="p-0">
-            <q-toolbar inverted color="dark" class="bg-light">
-              <q-toolbar-title>
-                My Rankings
-              </q-toolbar-title>
-              <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
-                <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
-                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Need Help?</q-tooltip>
-                </q-fab-action>
-                <q-fab-action color="primary" @click="toast('alarm')" icon="fa-user">
-                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Create A Evaluation</q-tooltip>
-                </q-fab-action>
-              </q-fab>
-            </q-toolbar>
-            <MyRankings></MyRankings>
-          </q-tab-pane>
-
-          <q-tab label="Public Evals" slot="title"
-                 name="tab-4"></q-tab>
-          <q-tab-pane name="tab-4" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
                 Public Evaluations
@@ -71,7 +52,28 @@
             <PublicEvals></PublicEvals>
           </q-tab-pane>
 
-          <q-tab label="User Roles" slot="title"
+          <q-tab label="Reports" slot="title"
+                 name="tab-4"></q-tab>
+          <q-tab-pane name="tab-4" class="p-0">
+            <q-toolbar inverted color="dark" class="bg-light">
+              <q-toolbar-title>
+                My Rankings
+              </q-toolbar-title>
+              <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
+                <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
+                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Need Help?</q-tooltip>
+                </q-fab-action>
+                <q-fab-action color="primary" @click="toast('alarm')" icon="fa-user">
+                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Create A Evaluation</q-tooltip>
+                </q-fab-action>
+              </q-fab>
+            </q-toolbar>
+            <MyRankings></MyRankings>
+          </q-tab-pane>
+
+
+
+          <q-tab label="Administration" slot="title"
                  name="tab-5"></q-tab>
           <q-tab-pane name="tab-5" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
