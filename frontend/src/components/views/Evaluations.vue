@@ -7,19 +7,6 @@
 
           <q-tab default label="My Evals" slot="title" name="tab-1"></q-tab>
           <q-tab-pane name="tab-1" class="p-0">
-            <q-toolbar inverted color="dark" class="bg-light">
-              <q-toolbar-title>
-                <q-btn color="primary">Promotion and Tenure</q-btn>
-              </q-toolbar-title>
-              <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
-                <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
-                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Need Help?</q-tooltip>
-                </q-fab-action>
-                <q-fab-action color="primary" @click="toast('alarm')" icon="fa-user">
-                  <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Create A Evaluation</q-tooltip>
-                </q-fab-action>
-              </q-fab>
-            </q-toolbar>
             <MyReports></MyReports>
           </q-tab-pane>
 
