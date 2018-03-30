@@ -10,6 +10,7 @@
             <MyReports></MyReports>
           </q-tab-pane>
 
+          <!--
           <q-tab label="My Completion Lists" slot="title"
                  name="tab-2"></q-tab>
           <q-tab-pane name="tab-2" class="p-0">
@@ -19,10 +20,11 @@
             </q-toolbar>
             <CompletionLists></CompletionLists>
           </q-tab-pane>
+          -->
 
           <q-tab label="Public Evals" slot="title"
-                 name="tab-3"></q-tab>
-          <q-tab-pane name="tab-3" class="p-0">
+                 name="tab-2"></q-tab>
+          <q-tab-pane name="tab-2" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
                 Public Evaluations
@@ -40,8 +42,8 @@
           </q-tab-pane>
 
           <q-tab label="Reports" slot="title"
-                 name="tab-4"></q-tab>
-          <q-tab-pane name="tab-4" class="p-0">
+                 name="tab-3"></q-tab>
+          <q-tab-pane name="tab-3" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
                 My Rankings
@@ -61,8 +63,8 @@
 
 
           <q-tab label="Administration" slot="title"
-                 name="tab-5"></q-tab>
-          <q-tab-pane name="tab-5" class="p-0">
+                 name="tab-4"></q-tab>
+          <q-tab-pane name="tab-4" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
                 User Roles
