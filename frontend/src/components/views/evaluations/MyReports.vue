@@ -5,28 +5,33 @@
         My Reports - Click on a section to generate an evaluations report.
       </q-toolbar-title>
       <q-btn row inline color="primary">Promotion and Tenure</q-btn>
-    </q-toolbar>    
+    </q-toolbar>
     <div class="row clearfix p-1">
       <div class="col-md-12 col-lg-12 clearfix">
-        <q-card v-for="sem in courses">
-          <q-card-title class="bg-primary">
-            <b>{{sem.semester}}</b>
-          </q-card-title>
-          <q-card-main class="card-block pt-2">
-            <table style="width: 100%">
-              <tr>
-                <th style="width: 20%">Course</th>
-                <th style="width: 40%; text-align:center">Share with Wildcat Account holders</th>
-                <th style="width: 40%; text-align:center">Share with Chairs and Deans</th>
-              </tr>
-              <tr v-for="c in sem.courses">
-                <td>{{c.title}}</td>
-                <td align="center"><input type="checkbox"></td>
-                <td align="center"><input type="checkbox"></td>
-              </tr>
-            </table>
-          </q-card-main>
-        </q-card>
+        <q-list  v-for="sem in courses">
+          <q-collapsible :label="sem.semester">
+            <q-card>
+              <q-card-main class="card-block pt-2">
+                <table style="width: 100%">
+                  <tr>
+                    <th style="width: 20%">Course</th>
+                    <th style="width: 20%; text-align:center">Should This Class be Evaluated</th>
+                    <th style="width: 20%; text-align:center">Share with Dean/Chair</th>
+                    <th style="width: 20%; text-align:center">Public Access</th>
+                    <th style="width: 20%; text-align:center">I Agree</th>
+                  </tr>
+                  <tr v-for="c in sem.courses">
+                    <td>{{c.title}}<br><i>25/30 Have Responded</i></td>
+                    <td align="center"><input type="checkbox"></td>
+                    <td align="center"><input type="checkbox"></td>
+                    <td align="center"><input type="checkbox"></td>
+                    <td align="center"><input type="checkbox"></td>
+                  </tr>
+                </table>
+              </q-card-main>
+            </q-card>
+          </q-collapsible>
+        </q-list>
       </div>
     </div>
   </div>
@@ -40,7 +45,7 @@ export default {
       let apicall = [
         {
           semester: 'Spring 2017',
-          courses: 
+          courses:
             [
               {
                 title: 'CS 2420',
@@ -66,7 +71,7 @@ export default {
         },
         {
           semester: 'Summer 2017',
-          courses: 
+          courses:
             [
               {
                 title: 'CS 2420',
@@ -92,7 +97,7 @@ export default {
         },
         {
           semester: 'Fall 2017',
-          courses: 
+          courses:
             [
               {
                 title: 'CS 2420',
@@ -118,7 +123,7 @@ export default {
         },
         {
           semester: 'Spring 2018',
-          courses: 
+          courses:
             [
               {
                 title: 'CS 2420',
@@ -145,14 +150,6 @@ export default {
       ]
       return apicall
     }
-    // columns() {
-    //   let apicall = [
-    //     {
-    //       name: "course",
-
-    //     }
-    //   ]
-    // }
   }
 }
 </script>
