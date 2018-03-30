@@ -12,22 +12,24 @@
           <q-collapsible :label="sem.semester">
             <q-card>
               <q-card-main class="card-block pt-2">
-                <table style="width: 100%">
+                <table style="width: 80%; display:inline;">
                   <tr>
-                    <th style="width: 20%">Course</th>
-                    <th style="width: 20%; text-align:center">Should This Class be Evaluated</th>
-                    <th style="width: 20%; text-align:center">Share with Dean/Chair</th>
-                    <th style="width: 20%; text-align:center">Public Access</th>
-                    <th style="width: 20%; text-align:center">I Agree</th>
+                    <th style="width: 25%">Course</th>
+                    <th style="width: 25%; text-align:center">Should This Class be Evaluated</th>
+                    <th style="width: 25%; text-align:center">Share with Dean/Chair</th>
+                    <th style="width: 25%; text-align:center">Public Access</th>
                   </tr>
                   <tr v-for="c in sem.courses">
                     <td>{{c.title}}<br><i>25/30 Have Responded</i></td>
                     <td align="center"><input type="checkbox"></td>
                     <td align="center"><input type="checkbox"></td>
                     <td align="center"><input type="checkbox"></td>
-                    <td align="center"><input type="checkbox"></td>
                   </tr>
                 </table>
+                <div style="float:right; width:20%;">
+                  <p>By selecting the button below, you are agreeing to send the settings configured for this semester to the Dean or Chair for review.</p>
+                  <q-btn inline color="primary">Lock</q-btn>
+                </div>
               </q-card-main>
             </q-card>
           </q-collapsible>
