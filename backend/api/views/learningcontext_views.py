@@ -17,6 +17,7 @@ import sys
 import operator
 from functools import reduce
 from django.db.models import Q
+from django.core import serializers
 
 log = logging.getLogger("_django_")
 
@@ -296,3 +297,26 @@ class LibraryAudienceDefault(generics.ListAPIView):
             return self.get_paginated_response(obj)
         except:
             return HttpResponse("Library Audience Default: List has failed", status=250)
+
+def getDepartments(request):
+    queryset = LearningContext.objects.filter(learning_context_type_id = 5)
+    #jsonData = serializeLearningContexts(queryset)
+    jsonData = serializers.serialize("json",queryset)
+    #return JsonResponse(jsonData,safe = True)
+    return HttpResponse(jsonData)
+
+def serializeLearningContext(lc):
+    serial = "{"
+    serial = serial + '"id":"' + str(lc.id) + '","name":"' + str(lc.name) + '"}'
+    return serial
+
+def serializeLearningContexts(lcs):
+    jsonData = '{"data":['
+    entity = serializeLearningContext(lcs[0])
+    jsonData = jsonData + entity
+    for lc in range(1,len(lcs)):
+        lc = serializeLearningContext(lcs[lc])
+        jsonData = jsonData + "," + lc
+    jsonData = jsonData + "]}"
+    return jsonData
+
