@@ -17,13 +17,17 @@
             <q-popover
               :anchor="anchor"
               :self="self">
-              <q-list link style="min-width: 100px">
-                <q-item
-                  v-for="n in semester"
+              <q-list v-for="n in semester" 
                   :key="`b-${n}`"
                   v-close-overlay
-                  @click.native="notify">
-                  <q-item-main label="Instuctor Name" />
+              link style="min-width: 100px">
+                <q-item
+                  v-for="c in n.classes"
+                  :key="`b-${c}`"
+                  v-close-overlay
+                  @click.native="notify"
+                  >
+                  <q-item-main :label="c.instructorName" />
                 </q-item>
               </q-list>
             </q-popover>
@@ -39,7 +43,7 @@
             <q-card-main class="card-block pt-2">
               <table style="width: 100%">
                 <tr v-for="c in sem.classes">
-                  <td><a :href="c.evalURL" target="_blank">{{c.className}}{{c.crn}}</a> ({{c.instructorLast}}, {{c.instructorFirst}})</td>
+                  <td><a :href="c.evalURL" target="_blank">{{c.className}}{{c.crn}}</a> ({{c.instructorName}})</td>
                 </tr>
               </table>
             </q-card-main>
@@ -72,8 +76,7 @@ export default {
               className: 'CS1400',
               taken: '22',
               total: '35',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Smith, Kevin',
               evalURL: 'www.weber.edu',
               isCourseEvaluated: true,
               isPublic: true,
@@ -85,8 +88,7 @@ export default {
               className: 'CS1410',
               taken: '19',
               total: '25',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Hart, Michelle',
               evalURL: 'www.google.com',
               isCourseEvaluated: false,
               isPublic: true,
@@ -98,8 +100,7 @@ export default {
               className: 'CS3100',
               taken: '18',
               total: '22',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Vase, Nancy',
               evalURL: 'www.utah.edu',
               isCourseEvaluated: true,
               isPublic: true,
@@ -111,8 +112,7 @@ export default {
               className: 'CS4110',
               taken: '9',
               total: '22',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Adams, Clark',
               evalURL: 'www.weber.edu',
               isCourseEvaluated: true,
               isPublic: true,
@@ -131,8 +131,7 @@ export default {
               className: 'CS1400',
               taken: '22',
               total: '35',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Adams, Clark',
               evalURL: 'www.weber.edu',
               isCourseEvaluated: true,
               isActive: true,
@@ -145,8 +144,7 @@ export default {
               className: 'CS1410',
               taken: '19',
               total: '25',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Adams, Clark',
               evalURL: 'www.weber.edu',
               isCourseEvaluated: false,
               isPublic: true,
@@ -158,8 +156,7 @@ export default {
               className: 'CS3100',
               taken: '18',
               total: '22',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Adams, Clark',
               evalURL: 'www.weber.edu',
               isCourseEvaluated: true,
               isPublic: true,
@@ -178,8 +175,7 @@ export default {
               className: 'CS1400',
               taken: '22',
               total: '35',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Adams, Clark',
               evalURL: 'www.weber.edu',
               isCourseEvaluated: true,
               isActive: true,
@@ -192,8 +188,7 @@ export default {
               className: 'CS1410',
               taken: '19',
               total: '25',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Adams, Clark',
               evalURL: 'www.weber.edu',
               isCourseEvaluated: false,
               isPublic: true,
@@ -205,8 +200,7 @@ export default {
               className: 'CS3100',
               taken: '18',
               total: '22',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Adams, Clark',
               evalURL: 'www.weber.edu',
               isCourseEvaluated: true,
               isPublic: true,
@@ -218,8 +212,7 @@ export default {
               className: 'CS3110',
               taken: '13',
               total: '22',
-              instructorFirst: 'FirstName',
-              instructorLast: 'LastName',
+              instructorName: 'Adams, Clark',
               evalURL: 'www.weber.edu',
               isCourseEvaluated: true,
               isPublic: true,
