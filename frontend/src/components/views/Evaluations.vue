@@ -65,7 +65,7 @@
           <q-tab label="Administration" slot="title"
                  name="tab-4"></q-tab>
           <q-tab-pane name="tab-4" class="p-0">
-            <q-toolbar inverted color="dark" class="bg-light">
+            <!-- <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
                 User Roles
               </q-toolbar-title>
@@ -77,8 +77,20 @@
                   <q-tooltip anchor="center left" self="center right" :offset="[20, 0]">Create A Evaluation</q-tooltip>
                 </q-fab-action>
               </q-fab>
-            </q-toolbar>
-              <UserRoles></UserRoles>
+            </q-toolbar> -->
+            <q-tabs align="justify" inverted
+                style="background-color: white">
+              <q-tab default label="User Roles" slot="title" name="tab-1"></q-tab>
+              <q-tab-pane name="tab-1" class="p-0">
+                <UserRoles></UserRoles>
+              </q-tab-pane>
+
+              <q-tab default label="Semester Review" slot="title" name="tab-2"></q-tab>
+              <q-tab-pane name="tab-2" class="p-0">
+                <SemesterReview></SemesterReview>
+              </q-tab-pane>
+            </q-tabs>
+              
           </q-tab-pane>
         </q-tabs>
       </div>
@@ -91,6 +103,7 @@
   import MyReports from './evaluations/MyReports'
   import PublicEvals from './evaluations/PublicEvals'
   import CompletionLists from './evaluations/CompletionLists'
+  import SemesterReview from './evaluations/SemesterReview'
 
   export default {
     name: 'evaluations',
@@ -99,7 +112,8 @@
       MyRankings,
       MyReports,
       PublicEvals,
-      CompletionLists
+      CompletionLists,
+      SemesterReview
     }
   }
 </script>
