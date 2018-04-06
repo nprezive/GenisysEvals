@@ -43,7 +43,7 @@
             <q-card-main class="card-block pt-2">
               <table style="width: 100%">
                 <tr v-for="c in sem.classes">
-                  <td><a :href="c.evalURL" target="_blank">{{c.className}}{{c.crn}}</a> ({{c.instructorName}})</td>
+                  <td><a :href="c.evalURL" target="_blank">{{c.className}}-{{c.crn}}</a> ({{c.instructorName}})</td>
                 </tr>
               </table>
             </q-card-main>
