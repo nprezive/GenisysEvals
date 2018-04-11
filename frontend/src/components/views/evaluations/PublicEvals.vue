@@ -12,59 +12,39 @@
         <q-card-main class="card-block pt-2">
           <p>Instructor can share their course and instructor evaluations with students.</p>
           <p>Below are evaluations that instructors have chosen to share.</p>
-          <q-btn push color="primary">
-            Filter By Instructor
-            <q-popover
-              :anchor="anchor"
-              :self="self">
-              <q-list v-for="n in semester" 
-                  :key="`b-${n}`"
-                  v-close-overlay
-              link style="min-width: 100px">
-                <q-item
-                  v-for="c in n.classes"
-                  :key="`b-${c}`"
-                  v-close-overlay
-                  @click.native="notify"
-                  >
-                  <q-item-main :label="c.instructorName" />
-                </q-item>
-              </q-list>
-            </q-popover>
-          </q-btn>
+          <input type="text" v-model="search" placeholder="Filter Semester"/>   
+          <div v-for="sem in filteredSemesters">
+            <br/>
+            <div class="col-md-12 col-lg-12 clearfix">
+                <q-collapsible :label="sem.semester">
+                  <q-card>
+                    <q-card-main class="card-block pt-2">
+                      <table style="width: 100%">
+                        <tr>
+                          <td><input type="text" v-model="search"/></td>
+                        </tr>
+                        <tr v-for="c in sem.classes">
+                          <td><a :href="c.evalURL" target="_blank">{{c.className}}-{{c.crn}}</a> ({{c.instructorName}})</td>
+                        </tr>
+                      </table>
+                    </q-card-main>
+                  </q-card>
+                </q-collapsible>
+            </div>
+          </div>
         </q-card-main>
       </q-card>
-    </div>
-
-    <div class="col-md-12 col-lg-12 clearfix">
-      <q-list v-for="sem in semester">
-        <q-collapsible :label="sem.semester">
-          <q-card>
-            <q-card-main class="card-block pt-2">
-              <table style="width: 100%">
-                <tr v-for="c in sem.classes">
-                  <td><a :href="c.evalURL" target="_blank">{{c.className}}-{{c.crn}}</a> ({{c.instructorName}})</td>
-                </tr>
-              </table>
-            </q-card-main>
-          </q-card>
-        </q-collapsible>
-      </q-list>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data: function () {
     return {
-      sSemesterIndex: 0
-    }
-  },
-  computed: {
-    semester () {
-      // APICall to get student's proctors
-      let apiCall = [
+      search: '',
+      searchInstructor: '',
+      courses: [
         {
           id: 12,
           semester: 'Spring 2018',
@@ -221,7 +201,19 @@ export default {
           ]
         }
       ]
-      return apiCall
+    }
+  },
+  computed: {
+    filteredSemesters:function()
+    {
+        var self=this;
+        return this.courses.filter(function(sem){return sem.semester.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
+    },
+
+    filteredClasses:function()
+    {
+        var self=this;
+        return this.courses.filter(function(cla){return cla.classes.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
     }
   },
   methods: {
