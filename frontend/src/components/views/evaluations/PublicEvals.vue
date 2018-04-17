@@ -13,17 +13,15 @@
           <p>Instructor can share their course and instructor evaluations with students.</p>
           <p>Below are evaluations that instructors have chosen to share.</p>
           <input type="text" v-model="search" placeholder="Filter Semester"/>   
-          <div v-for="sem in filteredSemesters">
+          <!-- filteredSemesters() -->
+          <div v-for="sem in courses">
             <br/>
             <div class="col-md-12 col-lg-12 clearfix">
                 <q-collapsible :label="sem.semester">
                   <q-card>
                     <q-card-main class="card-block pt-2">
                       <table style="width: 100%">
-                        <tr>
-                          <td><input type="text" v-model="search"/></td>
-                        </tr>
-                        <tr v-for="c in sem.classes">
+                        <tr v-for="c in filteredClasses(sem.classes)">
                           <td><a :href="c.evalURL" target="_blank">{{c.className}}-{{c.crn}}</a> ({{c.instructorName}})</td>
                         </tr>
                       </table>
@@ -204,27 +202,24 @@ export default {
     }
   },
   computed: {
-    filteredSemesters:function()
-    {
-        var self=this;
-        return this.courses.filter(function(sem){return sem.semester.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
-    },
-
-    filteredClasses:function()
-    {
-        var self=this;
-        return this.courses.filter(function(cla){return cla.classes.toLowerCase().indexOf(self.search.toLowerCase())>=0;});
-    }
+    
   },
   methods: {
-    openModal (semesterID) {
-      for (let i = 0; i < this.semester.length; i++) {
-        if (this.semester[i].id === semesterID) {
-          this.sSemesterIndex = semesterID
-          this.$refs.basicModal.open()
-          break
-        }// end if
-      }// end for
+      filteredSemesters:function()
+    {
+        var self=this;
+        return this.courses.filter(function(sem){
+          return sem.semester.toLowerCase().indexOf(self.search.toLowerCase())>=0;
+        });
+    },
+
+    filteredClasses:function(classes)
+    {
+      var self=this;
+      return classes.filter(function(classes)
+        {
+          return classes.instructorName.toLowerCase().indexOf(self.search.toLowerCase())>=0;
+        });
     }
   }
 }
