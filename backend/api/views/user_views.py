@@ -277,4 +277,3 @@ class UserViewSet(BaseModelViewSet):
             return Response(serializer)
         except:
             return HttpResponse("Proctor Students has failed", status=250)
-
