@@ -26,11 +26,11 @@ class EvalsViewSet(BaseModelViewSet):
     pagination_class = Paginator
     model = 'eval'
 
-@detail_route(methods=['get'])
-def getmyevals(self, request):
-    try:
-        user = request.user.id
-        evaluations = Evals.objects.get(user_id=user)
-        return HttpResponse(evaluations)
-    except:
-        HttpResponse("An error occurred", status=418)
+    @detail_route(methods=['get'])
+    def getmyevals(self, request):
+        try:
+            user = request.user.id
+            evaluations = Evals.objects.get(user_id=user)
+            return HttpResponse(evaluations)
+        except:
+            HttpResponse("An error occurred", status=418)
