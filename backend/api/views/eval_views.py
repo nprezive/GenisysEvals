@@ -20,7 +20,6 @@ import sys
 
 log = logging.getLogger("_django_")
 
-
 class EvalViewSet(BaseModelViewSet):
     queryset = Evals.objects.all()
     serializer_class = EvalsSerializer
