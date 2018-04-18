@@ -665,7 +665,7 @@ class SiteComputer(models.Model):
 
 class Evals(models.Model):
     semester = models.CharField(max_length=30, blank=True, null=True)
-    id = models.IntegerField(blank=True, null=True)
+    eval_id = models.IntegerField(blank=True, null=True)
     isActive = models.NullBooleanField()
     course_id = models.IntegerField(blank=True, null=True)
     course = models.CharField(max_length=30, blank=True, null=True)

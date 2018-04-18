@@ -87,6 +87,6 @@ urlpatterns = [
     url(r'^createquestionset', questionset.CreateQuestionSet),
     url(r'^createquestion', question.CreateQuestion),
     url(r'^proctorstudents', proctor.ProctorStudents),
-    url(r'^getdepartments',learningcontext.getDepartments),
-    url(r'^getmyevals', evals.getmyevals)
+    url(r'^getdepartments',learningcontext.getDepartments)
+    #url(r'^getmyevals', evals.getmyevals)
 ]
