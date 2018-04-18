@@ -49,7 +49,6 @@ router.register(r'user', user.UserViewSet)
 router.register(r'proctor', proctor.ProctorViewSet)
 router.register(r'eval', evals.EvalViewSet)
 
-
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^getresult', result.GetResult),
