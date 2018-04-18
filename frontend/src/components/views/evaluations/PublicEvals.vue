@@ -12,7 +12,7 @@
         <q-card-main class="card-block pt-2">
           <p>Instructor can share their course and instructor evaluations with students.</p>
           <p>Below are evaluations that instructors have chosen to share.</p>
-          <input type="text" v-model="search" placeholder="Filter Semester"/>   
+          <input type="text" v-model="search" placeholder="Filter Semester"/>
           <!-- filteredSemesters() -->
           <div v-for="sem in courses">
             <br/>
@@ -202,24 +202,21 @@ export default {
     }
   },
   computed: {
-    
+
   },
   methods: {
-      filteredSemesters:function()
-    {
-        var self=this;
-        return this.courses.filter(function(sem){
-          return sem.semester.toLowerCase().indexOf(self.search.toLowerCase())>=0;
-        });
+    filteredSemesters: function () {
+      var self = this
+      return this.courses.filter(function (sem) {
+        return sem.semester.toLowerCase().indexOf(self.search.toLowerCase()) >= 0
+      })
     },
 
-    filteredClasses:function(classes)
-    {
-      var self=this;
-      return classes.filter(function(classes)
-        {
-          return classes.instructorName.toLowerCase().indexOf(self.search.toLowerCase())>=0;
-        });
+    filteredClasses: function (classes) {
+      var self = this
+      return classes.filter(function (classes) {
+        return classes.instructorName.toLowerCase().indexOf(self.search.toLowerCase()) >= 0
+      })
     }
   }
 }
