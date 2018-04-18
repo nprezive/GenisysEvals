@@ -676,7 +676,7 @@ class Evals(models.Model):
     isPublicAccess = models.NullBooleanField()
     semester_id = models.IntegerField(blank=True, null=True)
     isLockedForReview = models.NullBooleanField()
-    user_id = models.ForeignKey('User', models.DO_NOTHING, db_column='user_id')
+    user = models.ForeignKey('User', models.DO_NOTHING, db_column='user_id')
 
     class Meta:
         managed = True

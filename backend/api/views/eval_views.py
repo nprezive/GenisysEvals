@@ -21,7 +21,7 @@ import sys
 log = logging.getLogger("_django_")
 
 
-class EvalsViewSet(BaseModelViewSet):
+class EvalViewSet(BaseModelViewSet):
     queryset = Evals.objects.all()
     serializer_class = EvalsSerializer
     pagination_class = Paginator
@@ -31,7 +31,7 @@ class EvalsViewSet(BaseModelViewSet):
     def getmyevals(self, request):
         try:
             user = request.user.id
-            evaluations = Evals.objects.get(user_id=user)
+            evaluations = Evals.objects.get(user=user)
             return HttpResponse(evaluations)
         except:
             HttpResponse("An error occurred", status=418)
