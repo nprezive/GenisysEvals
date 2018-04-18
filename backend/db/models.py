@@ -662,3 +662,27 @@ class SiteComputer(models.Model):
 
 #     def __str__(self):
 #         return "{}".format(self.key)
+
+class Evals(models.Model):
+    semester = models.CharField(max_length=30, blank=True, null=True)
+    id = models.IntegerField(blank=True, null=True)
+    isActive = models.NullBooleanField()
+    course_id = models.IntegerField(blank=True, null=True)
+    course = models.CharField(max_length=30, blank=True, null=True)
+    numberOfResponses = models.IntegerField(blank=True, null=True)
+    numberOfPotentialResponses = models.IntegerField(blank=True, null=True)
+    isEvaluated = models.NullBooleanField()
+    isShareWithDeanChair = models.NullBooleanField()
+    isPublicAccess = models.NullBooleanField()
+    semester_id = models.IntegerField(blank=True, null=True)
+    isLockedForReview = models.NullBooleanField()
+    user_id = models.ForeignKey('User', models.DO_NOTHING, db_column='user_id')
+
+    class Meta:
+        managed = True
+        db_table = 'EvalSet_Temp'
+
+    def __str__(self):
+        return "{}".format(self.name)
+
+
