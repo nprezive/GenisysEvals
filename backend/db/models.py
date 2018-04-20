@@ -681,6 +681,6 @@ class Evaluation(models.Model):
         db_table = 'EvalSet_Temp'
 
     def __str__(self):
-        return ""
+        return "ID {}".format(self.course_id)
 
 
