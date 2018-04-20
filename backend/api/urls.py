@@ -47,7 +47,7 @@ router.register(r'site', site.SiteViewSet)
 router.register(r'term', term.TermViewSet)
 router.register(r'user', user.UserViewSet)
 router.register(r'proctor', proctor.ProctorViewSet)
-router.register(r'eval', evaluations.EvalViewSet.getMyEvals)
+router.register(r'eval', evaluations.EvalViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
