@@ -5,5 +5,5 @@ from db import models
 
 class EvaluationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Evaluations
+        model = models.Evaluation
         fields = '__all__'

@@ -20,7 +20,7 @@ from .views import site_views as site
 from .views import term_views as term
 from .views import user_views as user
 from .views import proctor_views as proctor
-from .views import eval_views as evaluations
+from .views import eval_views as evaluation
 
 
 from rest_framework.routers import DefaultRouter
@@ -47,7 +47,7 @@ router.register(r'site', site.SiteViewSet)
 router.register(r'term', term.TermViewSet)
 router.register(r'user', user.UserViewSet)
 router.register(r'proctor', proctor.ProctorViewSet)
-router.register(r'eval', evaluations.EvalViewSet)
+router.register(r'eval', evaluation.EvalViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
@@ -88,5 +88,5 @@ urlpatterns = [
     url(r'^createquestion', question.CreateQuestion),
     url(r'^proctorstudents', proctor.ProctorStudents),
     url(r'^getdepartments',learningcontext.getDepartments)
-    #url(r'^getmyevals', evaluations.EvalViewSet.getMyEvals)
+    #url(r'^getmyevals', evaluation.EvalViewSet.getMyEvals)
 ]
