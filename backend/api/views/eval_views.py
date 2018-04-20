@@ -37,4 +37,4 @@ def getMyEvals(request, pk=None):
         evals = Evaluation.objects.get(user=user)
         return HttpResponse(evals)
     except:
-        return HttpResponse("An error occurred", status=418)
+        return HttpResponse("An error occurred {}".format(sys.exc_info()[0]), status=418)
