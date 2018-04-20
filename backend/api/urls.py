@@ -88,5 +88,5 @@ urlpatterns = [
     url(r'^createquestion', question.CreateQuestion),
     url(r'^proctorstudents', proctor.ProctorStudents),
     url(r'^getdepartments',learningcontext.getDepartments),
-    url(r'^getmyevals', evaluation.EvalViewSet.getMyEvals)
+    url(r'^getmyevals', evaluation.getMyEvals)
 ]
