@@ -12,7 +12,7 @@
 
             <q-collapsible group="somegroup"  label="Terms" ref="mycollapse">
               <div class="center">
-                <select multiple >
+                <select multiple id="term">
                   <option value="volvo">Fall 2016</option>
                   <option value="saab">Fall 2017</option>
                   <option value="opel">Fall 2018</option>
@@ -24,7 +24,7 @@
               </div>
 
             </q-collapsible>
-            <q-collapsible group="somegroup" label="Department" ref="departCollapse">
+            <q-collapsible group="somegroup" label="Department" ref="departCollapse" @show="startCounting">
               <div class="center">
                 Select Departments to include
                 <select multiple>
@@ -37,6 +37,7 @@
                 <q-btn text-color="black" label="Standard">Next</q-btn>
 
               </div>
+
             </q-collapsible>
             <q-collapsible group="somegroup" label="Course/Insturctor">
               <div class="center">
@@ -57,7 +58,7 @@
               <div class="center">
                 Sort By
                 <br></br>
-                <q-radio v-model="radio1" val="opt1" checked-icon="visibility" label="Instructor" />
+                <q-radio v-model="radio1" id='Instruct' val="opt1" checked-icon="visibility" label="Instructor" />
                 <q-radio v-model="radio1" val="opt2" checked-icon="visibility" label="Course" />
                 <br></br>
                 <q-btn text-color="black" label="Standard">Next</q-btn>
@@ -66,23 +67,33 @@
             </q-collapsible>
 
             <q-collapsible group="somegroup" label="Report Selection">
-              <div class="center">
+
+              <div class="center" v-if="id === 'Instruct'">
                 Report Options:
                 <br></br>
                 <q-radio v-model="radio1" val="opt1" checked-icon="visibility" label="Sort per term" />
                 <q-radio v-model="radio1" val="opt2" checked-icon="visibility" label="Sort per department" />
-                <q-radio v-model="radio1" val="opt1" checked-icon="visibility" label="Sort per instructor/course" />
-                <q-radio v-model="radio1" val="opt2" checked-icon="visibility" label="Display all as eval reports" />
-                <q-radio v-model="radio1" val="opt2" checked-icon="visibility" label="Display all as one report" />
+                <q-radio v-model="radio1" val="opt3" checked-icon="visibility" label="Sort per instructor/course" />
+                <q-radio v-model="radio1" val="opt4" checked-icon="visibility" label="Display all as eval reports" />
+                <q-radio v-model="radio1" val="opt5" checked-icon="visibility" label="Display all as one report" />
                 <br></br>
                 <q-btn text-color="black" label="Standard">Build Report</q-btn>
 
               </div>
+
+
+
+
+
+
+
+
             </q-collapsible>
           </q-list>
 
         </q-card-main>
       </q-card>
+      <div>"the value for number is: " + values</div>
     </div>
   </div>
 </template>
@@ -93,17 +104,19 @@
 </style>
 <script>
 
+
   export default {
     data () {
       return {
+        counter: 0,
         radio1: 'two',
         radio2: 'one',
         radio3: 'three',
         group: 'upload',
         list: ''
       }
-    }
+    },
   }
-
+  //var values = $('#select-meal-type').val();
 </script>
 
