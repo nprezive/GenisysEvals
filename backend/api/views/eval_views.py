@@ -34,7 +34,7 @@ class EvalViewSet(BaseModelViewSet):
 def getMyEvals(request, pk=None):
     try:
         user = request.user.id
-        evals = Evaluation.objects.get(user=user)
+        evals = Evaluation.objects.get(user=224)
         return HttpResponse(evals)
     except:
-        return HttpResponse("An error occurred {}".format(sys.exc_info()[0]), status=418)
+        return HttpResponse("An error occurred: {}".format(sys.exc_info()[0]), status=418)
