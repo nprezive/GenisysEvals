@@ -3,7 +3,7 @@ from ..global_classes import *
 from db import models
 
 
-class EvaluationSerializer(serializers.ModelSerializer):
+class EvalsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Evaluations
+        model = models.Evals
         fields = '__all__'

@@ -663,7 +663,7 @@ class SiteComputer(models.Model):
 #     def __str__(self):
 #         return "{}".format(self.key)
 
-class Evaluation(models.Model):
+class Evals(models.Model):
     semester = models.CharField(max_length=30, blank=True, null=True)
     course_id = models.IntegerField(blank=True, null=True)
     course = models.CharField(max_length=30, blank=True, null=True)

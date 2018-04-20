@@ -11,30 +11,26 @@ from random import shuffle
 from db.models import *
 from django.db.models import Q
 from ..serializers.raw_serializers import *
-from ..serializers.evaluation_serializer import *
+from ..serializers.evals_serializers import *
 from django.http import HttpResponse, JsonResponse
 import json
 import datetime
 import logging
 import sys
-from db import models
-
 
 log = logging.getLogger("_django_")
 
-
 class EvalViewSet(BaseModelViewSet):
-    queryset = Evaluation.objects.all()
-    serializer_class = EvaluationSerializer
+    queryset = Evals.objects.all()
+    serializer_class = EvalsSerializer
     pagination_class = Paginator
-    model = 'evaluation'
+    model = 'eval'
 
     @detail_route(methods=['get'])
-    def getMyEvals(self, request, pk=None):
+    def getmyevals(self, request):
         try:
             user = request.user.id
-            test = self.queryset.filter(user=user)
-            evals = Evaluation.objects.filter(user=user)
-            return HttpResponse(test)
+            evaluations = Evals.objects.get(user=user)
+            return HttpResponse(evaluations)
         except:
             HttpResponse("An error occurred", status=418)
