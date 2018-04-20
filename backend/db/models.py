@@ -665,17 +665,15 @@ class SiteComputer(models.Model):
 
 class Evals(models.Model):
     semester = models.CharField(max_length=30, blank=True, null=True)
-    eval_id = models.IntegerField(blank=True, null=True)
-    isActive = models.NullBooleanField()
     course_id = models.IntegerField(blank=True, null=True)
     course = models.CharField(max_length=30, blank=True, null=True)
-    numberOfResponses = models.IntegerField(blank=True, null=True)
-    numberOfPotentialResponses = models.IntegerField(blank=True, null=True)
-    isEvaluated = models.NullBooleanField()
-    isShareWithDeanChair = models.NullBooleanField()
-    isPublicAccess = models.NullBooleanField()
+    numberOfResponses = models.IntegerField(blank=True, null=True, db_column='numberofresponses')
+    numberOfPotentialResponses = models.IntegerField(blank=True, null=True, db_column='numberofpotentialresponses')
+    isEvaluated = models.NullBooleanField(db_column='isevaluated')
+    isShareWithDeanChair = models.NullBooleanField(db_column='issharewithdeanchair')
+    isPublicAccess = models.NullBooleanField(db_column='ispublicaccess')
     semester_id = models.IntegerField(blank=True, null=True)
-    isLockedForReview = models.NullBooleanField()
+    isLockedForReview = models.NullBooleanField(db_column='islockedforreview')
     user = models.ForeignKey('User', models.DO_NOTHING, db_column='user_id')
 
     class Meta:
@@ -683,6 +681,6 @@ class Evals(models.Model):
         db_table = 'EvalSet_Temp'
 
     def __str__(self):
-        return "{}".format(self.name)
+        return "ID {}".format(self.name)
 
 
