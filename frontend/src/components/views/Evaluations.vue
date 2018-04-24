@@ -46,7 +46,7 @@
           <q-tab-pane name="tab-3" class="p-0">
             <q-toolbar inverted color="dark" class="bg-light">
               <q-toolbar-title>
-                My Rankings
+                Reports
               </q-toolbar-title>
               <q-fab color="primary" active-icon="fa-times" icon="fa-cogs" direction="left">
                 <q-fab-action color="negative" @click="toast('alarm')" icon="fa-question">
@@ -90,7 +90,7 @@
                 <SemesterReview></SemesterReview>
               </q-tab-pane>
             </q-tabs>
-              
+
           </q-tab-pane>
         </q-tabs>
       </div>
