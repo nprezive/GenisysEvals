@@ -58,8 +58,7 @@
           </div>
       </div>
         <q-modal ref="basicModal" :content-css="{padding: '50px'}">
-          <div id="boxwhisker">
-          </div>
+          <div>INERST PROMOTION AND TENURE REPORT</div>
           <q-btn color="primary" @click="$refs.basicModal.close()">Close</q-btn>
         </q-modal>
     </div>
@@ -68,63 +67,6 @@
 <script>
   export default {
     name: 'mydefaults',
-    created () {
-      let recaptchaScript = document.createElement('script')
-      recaptchaScript.setAttribute('src', 'https://cdn.plot.ly/plotly-latest.min.js')
-      document.head.appendChild(recaptchaScript)
-    },
-    mounted:function(){
-      var y = ['Semester', 'Semester', 'Semester', 'Semester', 'Semester', 'Semester',
-        'Semester', 'Semester', 'Semester', 'Semester', 'Semester', 'Semester']
-
-      var trace1 = {
-        x: [0.2, 0.2, 0.6, 1.0, 0.5, 0.4, 0.2, 0.7, 0.9, 0.1, 0.5, 0.3],
-        y: y,
-        boxpoints: 'all',
-        name: 'Spring 2018',
-        marker: {color: '#3D9970'},
-        type: 'box',
-        boxmean: false,
-        orientation: 'h'
-      }
-
-      var trace2 = {
-        x: [0.6, 0.7, 0.3, 0.6, 0.0, 0.5, 0.7, 0.9, 0.5, 0.8, 0.7, 0.2],
-        y: y,
-        boxpoints: 'all',
-        name: 'Fall 2017',
-        marker: {color: '#FF4136'},
-        type: 'box',
-        boxmean: false,
-        orientation: 'h'
-      }
-
-      var trace3 = {
-        x: [0.1, 0.3, 0.1, 0.9, 0.6, 0.6, 0.9, 1.0, 0.3, 0.6, 0.8, 0.5],
-        y: y,
-        boxpoints: 'all',
-        name: 'Summer 2017',
-        marker: {color: '#FF851B'},
-        type: 'box',
-        boxmean: false,
-        orientation: 'h'
-      }
-
-      var data = [trace1, trace2, trace3]
-
-      var layout = {
-        title: 'Evaluations',
-        xaxis: {
-          title: 'Percentage',
-          zeroline: false
-        },
-        boxmode: 'group'
-      }
-       while (!Plotly === true){
-         var a
-       }
-       Plotly.newPlot('boxwhisker', data, layout)
-    },
     data () {
       return {
         msg: 'Proctoring',
