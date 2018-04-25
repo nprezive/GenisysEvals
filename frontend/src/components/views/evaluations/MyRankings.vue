@@ -89,6 +89,7 @@
         </q-card-title>
          <q-card-main class="card-block pt-2">
             <q-btn row inline color="primary" @click="openModal()">Box and Whisker Plot</q-btn>
+            <q-btn row inline color="primary" @click="openModal()">Pin Graph</q-btn>
          </q-card-main>
       </q-card>
 
@@ -96,6 +97,11 @@
     <q-modal ref="basicModal" :content-css="{padding: '50px'}">
         <div id="boxwhisker"></div>
       <div id="boxwhisker1"></div>
+      <q-btn color="primary" @click="$refs.basicModal.close()">Close</q-btn>
+    </q-modal>
+    <q-modal ref="basicModal" :content-css="{padding: '50px'}">
+        <div id="pinGraph"></div>
+      <div id="pinGraph1"></div>
       <q-btn color="primary" @click="$refs.basicModal.close()">Close</q-btn>
     </q-modal>
   </div>
