@@ -1,8 +1,8 @@
 <template>
   <div class="row clearfix p-1">
     <div class="col-md-12 col-lg-12 clearfix">
-      <q-card>
-        <q-card-main class="card-block pt-2">
+      <!-- <q-card>
+        <q-card-main class="card-block pt-2"> -->
           <p>Instructor can share their course and instructor evaluations with students.</p>
           <p>Below are evaluations that instructors have chosen to share.</p>
           <input type="text" v-model="search" placeholder="Filter Instructor"/>
@@ -11,20 +11,21 @@
             <br/>
             <div class="col-md-12 col-lg-12 clearfix">
               <q-collapsible :label="sem.semester" opened>
-                <q-card>
-                  <q-card-main class="card-block pt-2">
+                <!-- <q-card> -->
+                  <!-- <q-card-main class="card-block pt-2"> -->
                     <table style="width: 100%">
                       <tr v-for="c in filteredClasses(sem.classes)">
-                        <td><a :href="c.evalURL" target="_blank">{{c.className}}-{{c.crn}}</a> ({{c.instructorName}})</td>
+                        <td><a :href="c.evalURL" target="_blank">{{c.className}}</a> ({{c.instructorName}})</td>
                       </tr>
                     </table>
-                  </q-card-main>
-                </q-card>
+                  <!-- </q-card-main> -->
+                <!-- </q-card> -->
               </q-collapsible>
+              <hr style="width:98%;"/>
             </div>
           </div>
-        </q-card-main>
-      </q-card>
+        <!-- </q-card-main>
+      </q-card> -->
     </div>
   </div>
 </template>
@@ -208,7 +209,9 @@ export default {
     filteredClasses: function (classes) {
       var self = this
       return classes.filter(function (classes) {
-        return classes.instructorName.toLowerCase().indexOf(self.search.toLowerCase()) >= 0
+        var values = classes.instructorName.toLowerCase().indexOf(self.search.toLowerCase()) >= 0
+        values += classes.className.toLowerCase().indexOf(self.search.toLowerCase()) >= 0
+        return values
       })
     }
   }
