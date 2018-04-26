@@ -1,3 +1,10 @@
+new Vue({
+el: '#root',
+data: {
+picked: 'b'
+}
+});
+
 <template>
   <div class="row clearfix p-1">
     <div class="col-md-12 col-lg-4 clearfix">
@@ -10,113 +17,151 @@
 
           <q-list>
 
-            <q-collapsible group="somegroup"  label="Terms" ref="mycollapse">
+            <q-collapsible group="somegroup"  label="Terms" ref="mycollapse" >
               <div class="center">
-                <select multiple id="term">
-                  <option value="volvo">Fall 2016</option>
-                  <option value="saab">Fall 2017</option>
-                  <option value="opel">Fall 2018</option>
-                  <option value="audi">Fall 2019</option>
+
+                <select class="center" size="4" style="width: 250px;" font-size="24px;">
+                  <option >Fall 2016</option>
+                  <option >Fall 2017</option>
+                  <option >Fall 2018</option>
+                  <option >Fall 2019</option>
+                  <option >Fall 2020</option>
+                  <option >Fall 2021</option>
+                  <option >Fall 2022</option>
+                  <option >Fall 2017</option>
+                  <option >Fall 2018</option>
+                  <option >Fall 2019</option>
+                  <option >Fall 2020</option>
+                  <option >Fall 2021</option>
+                  <option >Fall 2022</option>
                 </select>
+
                 <br></br>
-                <q-btn text-color="black" label="Standard">Next</q-btn>
 
               </div>
 
             </q-collapsible>
-            <q-collapsible group="somegroup" label="Department" ref="departCollapse" @show="startCounting">
+
+            <q-collapsible group="somegroup" label="Department" ref="departCollapse" >
               <div class="center">
                 Select Departments to include
-                <select multiple>
-                  <option value="volvo">Computer Science</option>
-                  <option value="saab">Engineering</option>
-                  <option value="opel">Math</option>
-                  <option value="audi">Science</option>
+                <select class="center" size="4" style="width: 250px;" font-size="24px;">
+                  <option >Computer Science</option>
+                  <option >Engineering</option>
+                  <option >Math</option>
+                  <option >Science</option>
+                  <option >Computer Science</option>
+                  <option >Engineering</option>
+                  <option >Math</option>
+                  <option >Science</option>
                 </select>
                 <br></br>
-                <q-btn text-color="black" label="Standard">Next</q-btn>
 
               </div>
 
-            </q-collapsible>
-            <q-collapsible group="somegroup" label="Course/Insturctor">
-              <div class="center">
-                Select to include
-                <br></br>
-                <select multiple>
-                  <option value="volvo">CS2420</option>
-                  <option value="saab">CS2550</option>
-                  <option value="opel">CS2559</option>
-                  <option value="audi">CS2690</option>
-                </select>
-                <br></br>
-                <q-btn text-color="black" label="Standard">Next</q-btn>
-
-              </div>
             </q-collapsible>
             <q-collapsible group="somegroup"  label="Sort By">
               <div class="center">
                 Sort By
-                <br></br>
-                <q-radio v-model="radio1" id='Instruct' val="opt1" checked-icon="visibility" label="Instructor" />
-                <q-radio v-model="radio1" val="opt2" checked-icon="visibility" label="Course" />
-                <br></br>
-                <q-btn text-color="black" label="Standard">Next</q-btn>
+                <br>
+                <div id="demo">
+                  <input type="radio" id="picked" v-model="picked" name="picked" v-bind:value="'Instructor'" value="Instructor" > Instructor
+                  <br>
+                  <input type="radio" id="picked" v-model="picked" name="picked" v-bind:value="'Course'" value="Course" > Course
+                  <br>
+                  <!--<span>Picked: {{ picked }}</span>-->
+                </div>
 
               </div>
             </q-collapsible>
+            <q-collapsible group="somegroup" label="Course/Insturctor">
+              <div class="center" v-if="picked === 'Course'">
+                Select to include
+                <br></br>
+                <select class="center" size="4" style="width: 250px;" font-size="24px;">
+                  <option >CS2420</option>
+                  <option >CS2550</option>
+                  <option >CS2559</option>
+                  <option >CS2690</option>
+                  <option >CS2550</option>
+                  <option >CS2559</option>
+                  <option >CS2690</option>
+                  <option >CS2550</option>
+                  <option >CS2559</option>
+                  <option >CS2690</option>
+                  <option >CS2550</option>
+                  <option >CS2559</option>
+                  <option >CS2690</option>
+                </select>
+                <br></br>
+
+              </div>
+
+              <div class="center" v-if="picked === 'Instructor'">
+                Select to include
+                <br></br>
+                <select size="4" style="width: 250px;" font-size="24px;">
+                  <option >John Smith</option>
+                  <option >Jane Doe</option>
+                  <option >Sam Smith</option>
+                  <option >John Smith</option>
+                  <option >Sam Adams</option>
+                  <option >Jake Adams</option>
+                  <option >John Smith</option>
+                  <option >John Smith</option>
+                  <option >John Smith</option>
+                  <option >John Smith</option>
+                  <option >John Smith</option>
+                  <option >John Smith</option>
+                  <option >John Smith</option>
+                </select>
+                <br></br>
+
+              </div>
+            </q-collapsible>
+
 
             <q-collapsible group="somegroup" label="Report Selection">
 
-              <div class="center" v-if="id === 'Instruct'">
+              <div class="center">
                 Report Options:
                 <br></br>
-                <q-radio v-model="radio1" val="opt1" checked-icon="visibility" label="Sort per term" />
-                <q-radio v-model="radio1" val="opt2" checked-icon="visibility" label="Sort per department" />
-                <q-radio v-model="radio1" val="opt3" checked-icon="visibility" label="Sort per instructor/course" />
-                <q-radio v-model="radio1" val="opt4" checked-icon="visibility" label="Display all as eval reports" />
-                <q-radio v-model="radio1" val="opt5" checked-icon="visibility" label="Display all as one report" />
-                <br></br>
+                <input type="radio" id="report" v-model="report" name="report" v-bind:value="'report'" value="report" > Sort per term
+                <br>
+                <input type="radio" id="report" v-model="report" name="report" v-bind:value="'report'" value="report" > Sort per department
+                <br>
+                <input type="radio" id="report" v-model="report" name="report" v-bind:value="'report'" value="report" > Sort per instructor/course
+                <br>
+                <input type="radio" id="report" v-model="report" name="report" v-bind:value="'report'" value="report" > Display all as eval reports
+                <br>
+                <input type="radio" id="report" v-model="report" name="report" v-bind:value="'report'" value="report" > Display all as one report
+                <br>
                 <q-btn text-color="black" label="Standard">Build Report</q-btn>
 
               </div>
-
-
-
-
-
-
-
-
             </q-collapsible>
+
           </q-list>
 
         </q-card-main>
       </q-card>
-      <div>"the value for number is: " + values</div>
     </div>
   </div>
 </template>
 <style>
   .center {
     text-align: center;
+    font-size: large;
   }
 </style>
 <script>
-
-
   export default {
-    data () {
-      return {
-        counter: 0,
-        radio1: 'two',
-        radio2: 'one',
-        radio3: 'three',
-        group: 'upload',
-        list: ''
+    data() {
+      return{
+        picked: ''
       }
-    },
+    }
   }
-  //var values = $('#select-meal-type').val();
+
 </script>
 
