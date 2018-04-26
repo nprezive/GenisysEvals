@@ -16,7 +16,7 @@ picked: 'b'
             <q-collapsible group="somegroup"  label="Terms" ref="mycollapse" >
               <div class="center">
 
-                <select class="center" size="4" style="width: 250px;" font-size="24px;">
+                <select multiple class="center" size="4" style="width: 250px;" font-size="24px;">
                   <option >Fall 2016</option>
                   <option >Fall 2017</option>
                   <option >Fall 2018</option>
@@ -42,7 +42,7 @@ picked: 'b'
               <div class="center">
                 Select Departments to include
                 <br>
-                <select class="center" size="4" style="width: 250px;" font-size="24px;">
+                <select multiple class="center" size="4" style="width: 250px;" font-size="24px;">
                   <option >Computer Science</option>
                   <option >Engineering</option>
                   <option >Math</option>
@@ -75,7 +75,7 @@ picked: 'b'
               <div class="center" v-if="picked === 'Course'">
                 Select to include
                 <br></br>
-                <select class="center" size="4" style="width: 250px;" font-size="24px;">
+                <select multiple class="center" size="4" style="width: 250px;" font-size="24px;">
                   <option >CS2420</option>
                   <option >CS2550</option>
                   <option >CS2559</option>
@@ -97,7 +97,7 @@ picked: 'b'
               <div  v-if="picked === 'Instructor'">
                 Select to include
                 <br>
-                <select size="4" style="width: 250px;" font-size="24px;">
+                <select multiple size="4" style="width: 250px;" font-size="24px;">
                   <option >John Smith</option>
                   <option >Jane Doe</option>
                   <option >Sam Smith</option>
