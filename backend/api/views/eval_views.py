@@ -34,7 +34,7 @@ class EvalViewSet(BaseModelViewSet):
 def getMyEvals(request, pk=None):
     try:
         user = request.user.id
-        queryset = Evaluation.objects.filter(user=user).order_by('semester_id').all().values()
+        queryset = Evaluation.objects.filter(user=user).order_by('semester_id')
         obj = EvaluationSerializer(queryset)
         lastid = 0
         semester = {}
