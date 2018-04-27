@@ -34,7 +34,7 @@ class EvalViewSet(BaseModelViewSet):
 def getMyEvals(request, pk=None):
     try:
         user = request.user.id
-        queryset = list(Evaluation.objects.filter(user=user).order_by('semester_id').all().values())
+        queryset = Evaluation.objects.filter(user=user).order_by('semester_id').all().values()
         lastid = 0
         semester = {}
         s = []
@@ -74,6 +74,6 @@ def getMyEvals(request, pk=None):
                 newClass.isSharedDeans = i.isShareWithDeanChair
                 semester.classes.append(newClass)
         s.append(semester)
-        return HttpResponse(JSONRenderer.Render(s))
+        return HttpResponse(JSONRenderer.Render(s)
     except Exception as e:
         return HttpResponse("An error occurred: {}".format(e.args[0]), status=418)
