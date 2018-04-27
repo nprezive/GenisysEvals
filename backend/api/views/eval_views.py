@@ -34,14 +34,13 @@ class EvalViewSet(BaseModelViewSet):
 def getMyEvals(request, pk=None):
     try:
         user = request.user.id
-        queryset = Evaluation.objects.filter(user=user).order_by('semester_id')
-        obj = EvaluationSerializer(queryset)
+        queryset = Evaluation.objects.filter(user=user).order_by('semester_id').all().values()
         lastid = 0
         semester = {}
         s = []
         crn = 1
         classes = []
-        for i in obj:
+        for i in queryset:
             if i.semester_id != lastid:
                 if lastid != 0:
                     s.append(semester)
