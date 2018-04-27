@@ -34,11 +34,11 @@ class EvalViewSet(BaseModelViewSet):
 def getMyEvals(request, pk=None):
     try:
         user = request.user.id
-        queryset = list(Evaluation.objects.filter(user=user).all().values()).sort(key=lambda x: x.semester_id).all().values()
+        queryset = list(Evaluation.objects.filter(user=user).order_by('semester_id').all().values())
         lastid = 0
         semester = {}
         s = []
-        crn = 0
+        crn = 1
         classes = []
         for i in queryset:
             if i.id != lastid:
@@ -51,25 +51,27 @@ def getMyEvals(request, pk=None):
                 semester.classes = []
                 newClass = {}
                 newClass.id = i.course_id
-                newClass.crn = ++crn
+                crn += 1
+                newClass.crn = crn
                 newClass.className = i.course
                 newClass.taken = i.numberOfResponses
                 newClass.numberOfPotentialResponses = i.numberOfPotentialResponses
                 newClass.isCourseEvaluated = i.isEvaluated
-                newClass.isPublicAccess = i.isPublic
-                newClass.isShareWithDeanChair = i.isShareWithDeanChair
+                newClass.isPublic = i.isPublic
+                newClass.isSharedDeans = i.isShareWithDeanChair
                 semester.classes.append(newClass)
                 lastid = i.id
             else:
                 newClass = {}
                 newClass.id = i.course_id
-                newClass.crn = ++crn
+                crn += 1
+                newClass.crn = crn
                 newClass.className = i.course
                 newClass.taken = i.numberOfResponses
                 newClass.numberOfPotentialResponses = i.numberOfPotentialResponses
                 newClass.isCourseEvaluated = i.isEvaluated
-                newClass.isPublicAccess = i.isPublic
-                newClass.isShareWithDeanChair = i.isShareWithDeanChair
+                newClass.isPublic = i.isPublic
+                newClass.isSharedDeans = i.isShareWithDeanChair
                 semester.classes.append(newClass)
         s.append(semester)
         return HttpResponse(JSONRenderer.Render(s))
