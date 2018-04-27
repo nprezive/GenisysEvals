@@ -681,6 +681,6 @@ class Evals(models.Model):
         db_table = 'EvalSet_Temp'
 
     def __str__(self):
-        return "ID {}".format(self.name)
+        return "ID {}".format(self.course_id)
 
 

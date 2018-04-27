@@ -65,152 +65,58 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'mydefaults',
-    data () {
+import {
+  Loading
+} from 'quasar'
+export default {
+  name:'mydefaults',
+  data () {
       return {
         msg: 'Proctoring',
-        semData: {
-          s: [
-            {
-              id: 12,
-              semester: 'Spring 2018',
-              isActive: true,
-              classes: [
-                {
-                  id: 1234,
-                  crn: '22325',
-                  className: 'CS1400',
-                  taken: '22',
-                  total: '35',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                },
-                {
-                  id: 1233,
-                  crn: '22145',
-                  className: 'CS1410',
-                  taken: '19',
-                  total: '25',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                },
-                {
-                  id: 12334,
-                  crn: '22323',
-                  className: 'CS3100',
-                  taken: '18',
-                  total: '22',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                },
-                {
-                  id: 12334,
-                  crn: '22323',
-                  className: 'CS4110',
-                  taken: '9',
-                  total: '22',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                }
-              ]
-            },
-            {
-              id: 13,
-              semester: 'Fall 2017',
-              isActive: false,
-              classes: [
-                {
-                  id: 1234,
-                  crn: '22325',
-                  className: 'CS1400',
-                  taken: '22',
-                  total: '35',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                },
-                {
-                  id: 1233,
-                  crn: '22145',
-                  className: 'CS1410',
-                  taken: '19',
-                  total: '25',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                },
-                {
-                  id: 12334,
-                  crn: '22323',
-                  className: 'CS3100',
-                  taken: '18',
-                  total: '22',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                }
-              ]
-            },
-            {
-              id: 14,
-              semester: 'Spring 2017',
-              isActive: false,
-              classes: [
-                {
-                  id: 1234,
-                  crn: '22325',
-                  className: 'CS1400',
-                  taken: '22',
-                  total: '35',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                },
-                {
-                  id: 1233,
-                  crn: '22145',
-                  className: 'CS1410',
-                  taken: '19',
-                  total: '25',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                },
-                {
-                  id: 12334,
-                  crn: '22323',
-                  className: 'CS3100',
-                  taken: '18',
-                  total: '22',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                },
-                {
-                  id: 123343,
-                  crn: '223232',
-                  className: 'CS3110',
-                  taken: '13',
-                  total: '22',
-                  isCourseEvaluated: false,
-                  isPublic: false,
-                  isSharedDeans: false
-                }
-              ]
-            }
-          ]
-        }
+        semData: false
       }
     },
-    methods: {
-      openModal () {
-        this.$refs.basicModal.open()
-      }
+  mounted () {
+    //I assume this checks login status and redirects if not authenticated. Copied from frontend/src/components/containers/Checkin.vue
+    this.$http({
+        method: 'post',
+        url: '/api/isloggedin/'
+      }).then(response => {
+        if (response.status === 200) {
+          this.checked = true
+        }
+        if (response.status === 250) {
+          this.$router.push({path: '/login'})
+        }
+      }).catch(error => {
+        console.log(error)
+      })
+
+      //A message to show that the page is loading
+      Loading.show({
+        message: 'Getting Site Info'
+      })
+
+      //API call to get a list of semesters, courses, and state of eval completion, aka "semData"
+      this.$http({
+        method: 'get',
+        url: 'api/getmyevals'
+      }).then(response => {
+        if (response.status === 250) {
+            this.$router.error = response.data
+            this.$router.push({path: '/error'})
+        }
+        Loading.hide()
+        this.semData = response.data
+      }).catch(error => {
+          console.log(error)
+      })
+  },
+  methods: {
+    openModal () {
+      this.$refs.basicModal.open()
     }
   }
+
+}
 </script>
