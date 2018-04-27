@@ -34,7 +34,44 @@ class EvalViewSet(BaseModelViewSet):
 def getMyEvals(request, pk=None):
     try:
         user = request.user.id
-        # queryset = list(Evaluation.objects.filter(user=user).all().values())
+        queryset = list(Evaluation.objects.filter(user=user).sort(key=lambda  x:x.id).all().values())
+        lastid = 0
+        semester = {}
+        s = []
+        classes = []
+        for i in queryset:
+            if i.id != lastid:
+                if lastid != 0:
+                    s.append(semester)
+                semester = {}
+                semester.id = i.semester_id
+                semester.semester = i.semester
+                semester.isActive = True
+                semester.classes = []
+                newClass = {}
+                newClass.id = i.course_id
+                newClass.crn = i.crn
+                newClass.className = i.course
+                newClass.taken = i.taken
+                newClass.total = i.total
+                newClass.isCourseEvaluated = i.isEvaluated
+                newClass.isPublic = i.isPublic
+                newClass.isSharedDeans = i
+                semester.classes.append(newClass)
+                lastid = i.id
+            else:
+                newClass = {}
+                newClass.id = i.course_id
+                newClass.crn = i.crn
+                newClass.className = i.course
+                newClass.taken = i.taken
+                newClass.total = i.total
+                newClass.isCourseEvaluated = i.isEvaluated
+                newClass.isPublic = i.isPublic
+                newClass.isSharedDeans = i
+                semester.classes.append(newClass)
+        s.append(semester)
+
         queryset = """{
           "s":[
             {
@@ -170,6 +207,6 @@ def getMyEvals(request, pk=None):
             }
           ]
         }"""
-        return HttpResponse(queryset)
+        return HttpResponse(JSONRenderer.Render(s))
     except Exception as e:
         return HttpResponse("An error occurred: {}".format(e.args[0]), status=418)
