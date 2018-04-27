@@ -57,7 +57,7 @@ def getMyEvals(request, pk=None):
                 newClass['taken'] = i['numberOfResponses']
                 newClass['numberOfPotentialResponses'] = i['numberOfPotentialResponses']
                 newClass['isCourseEvaluated'] = i['isEvaluated']
-                newClass['isPublic'] = i['isPublic']
+                newClass['isPublic'] = i['isPublicAccess']
                 newClass['isSharedDeans'] = i['isShareWithDeanChair']
                 semester.classes.append(newClass)
                 lastid = i['semester_id']
@@ -70,7 +70,7 @@ def getMyEvals(request, pk=None):
                 newClass['taken'] = i['numberOfResponses']
                 newClass['numberOfPotentialResponses'] = i['numberOfPotentialResponses']
                 newClass['isCourseEvaluated'] = i['isEvaluated']
-                newClass['isPublic'] = i['isPublic']
+                newClass['isPublic'] = i['isPublicAccess']
                 newClass['isSharedDeans'] = i['isShareWithDeanChair']
                 semester.classes.append(newClass)
         s.append(semester)
