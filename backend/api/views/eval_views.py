@@ -59,7 +59,7 @@ def getMyEvals(request, pk=None):
                 newClass['isCourseEvaluated'] = i['isEvaluated']
                 newClass['isPublic'] = i['isPublicAccess']
                 newClass['isSharedDeans'] = i['isShareWithDeanChair']
-                semester.classes.append(newClass)
+                semester['classes'].append(newClass)
                 lastid = i['semester_id']
             else:
                 newClass = {}
@@ -72,7 +72,7 @@ def getMyEvals(request, pk=None):
                 newClass['isCourseEvaluated'] = i['isEvaluated']
                 newClass['isPublic'] = i['isPublicAccess']
                 newClass['isSharedDeans'] = i['isShareWithDeanChair']
-                semester.classes.append(newClass)
+                semester['classes'].append(newClass)
         s.append(semester)
         return HttpResponse(JSONRenderer().Render(s))
     except Exception as e:
