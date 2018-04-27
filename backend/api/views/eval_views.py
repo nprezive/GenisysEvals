@@ -11,20 +11,23 @@ from random import shuffle
 from db.models import *
 from django.db.models import Q
 from ..serializers.raw_serializers import *
-from ..serializers.evals_serializers import *
+from ..serializers.evaluation_serializer import *
 from django.http import HttpResponse, JsonResponse
 import json
 import datetime
 import logging
 import sys
+from db import models
+
 
 log = logging.getLogger("_django_")
 
+
 class EvalViewSet(BaseModelViewSet):
-    queryset = Evals.objects.all()
-    serializer_class = EvalsSerializer
+    queryset = Evaluation.objects.all()
+    serializer_class = EvaluationSerializer
     pagination_class = Paginator
-    model = 'eval'
+    model = 'evaluation'
 
 
 @detail_route(methods=['get'])
