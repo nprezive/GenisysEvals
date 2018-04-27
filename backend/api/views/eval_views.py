@@ -41,7 +41,7 @@ def getMyEvals(request, pk=None):
         crn = 1
         classes = []
         for i in queryset:
-            if i.id != lastid:
+            if i.semester_id != lastid:
                 if lastid != 0:
                     s.append(semester)
                 semester = {}
@@ -60,7 +60,7 @@ def getMyEvals(request, pk=None):
                 newClass.isPublic = i.isPublic
                 newClass.isSharedDeans = i.isShareWithDeanChair
                 semester.classes.append(newClass)
-                lastid = i.id
+                lastid = i.semester_id
             else:
                 newClass = {}
                 newClass.id = i.course_id
