@@ -41,37 +41,37 @@ def getMyEvals(request, pk=None):
         crn = 1
         classes = []
         for i in queryset:
-            if i.semester_id != lastid:
+            if i['semester_id'] != lastid:
                 if lastid != 0:
                     s.append(semester)
                 semester = {}
-                semester.id = i.semester_id
-                semester.semester = i.semester
-                semester.isActive = i.isLockedForReview
+                semester.id = i['semester_id']
+                semester.semester = i['semester']
+                semester.isActive = i['isLockedForReview']
                 semester.classes = []
                 newClass = {}
-                newClass.id = i.course_id
+                newClass.id = i['course_id']
                 crn += 1
                 newClass.crn = crn
-                newClass.className = i.course
-                newClass.taken = i.numberOfResponses
-                newClass.numberOfPotentialResponses = i.numberOfPotentialResponses
-                newClass.isCourseEvaluated = i.isEvaluated
-                newClass.isPublic = i.isPublic
-                newClass.isSharedDeans = i.isShareWithDeanChair
+                newClass.className = i['course']
+                newClass.taken = i['numberOfResponses']
+                newClass.numberOfPotentialResponses = i['numberOfPotentialResponses']
+                newClass.isCourseEvaluated = i['isEvaluated']
+                newClass.isPublic = i['isPublic']
+                newClass.isSharedDeans = i['isShareWithDeanChair']
                 semester.classes.append(newClass)
-                lastid = i.semester_id
+                lastid = i['semester_id']
             else:
                 newClass = {}
-                newClass.id = i.course_id
+                newClass.id = i['course_id']
                 crn += 1
                 newClass.crn = crn
-                newClass.className = i.course
-                newClass.taken = i.numberOfResponses
-                newClass.numberOfPotentialResponses = i.numberOfPotentialResponses
-                newClass.isCourseEvaluated = i.isEvaluated
-                newClass.isPublic = i.isPublic
-                newClass.isSharedDeans = i.isShareWithDeanChair
+                newClass.className = i['course']
+                newClass.taken = i['numberOfResponses']
+                newClass.numberOfPotentialResponses = i['numberOfPotentialResponses']
+                newClass.isCourseEvaluated = i['isEvaluated']
+                newClass.isPublic = i['isPublic']
+                newClass.isSharedDeans = i['isShareWithDeanChair']
                 semester.classes.append(newClass)
         s.append(semester)
         return HttpResponse(JSONRenderer().Render(s))
