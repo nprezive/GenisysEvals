@@ -34,10 +34,11 @@ class EvalViewSet(BaseModelViewSet):
 def getMyEvals(request, pk=None):
     try:
         user = request.user.id
-        queryset = list(Evaluation.objects.filter(user=user).sort(key=lambda  x:x.id).all().values())
+        queryset = list(Evaluation.objects.filter(user=user).all().values()).sort(key=lambda x: x.id).all().values()
         lastid = 0
         semester = {}
         s = []
+        crn = 0
         classes = []
         for i in queryset:
             if i.id != lastid:
@@ -46,29 +47,29 @@ def getMyEvals(request, pk=None):
                 semester = {}
                 semester.id = i.semester_id
                 semester.semester = i.semester
-                semester.isActive = True
+                semester.isActive = i.isLockedForReview
                 semester.classes = []
                 newClass = {}
                 newClass.id = i.course_id
-                newClass.crn = i.crn
+                newClass.crn = ++crn
                 newClass.className = i.course
-                newClass.taken = i.taken
-                newClass.total = i.total
+                newClass.taken = i.numberOfResponses
+                newClass.numberOfPotentialResponses = i.numberOfPotentialResponses
                 newClass.isCourseEvaluated = i.isEvaluated
-                newClass.isPublic = i.isPublic
-                newClass.isSharedDeans = i
+                newClass.isPublicAccess = i.isPublic
+                newClass.isShareWithDeanChair = i.isShareWithDeanChair
                 semester.classes.append(newClass)
                 lastid = i.id
             else:
                 newClass = {}
                 newClass.id = i.course_id
-                newClass.crn = i.crn
+                newClass.crn = ++crn
                 newClass.className = i.course
-                newClass.taken = i.taken
-                newClass.total = i.total
+                newClass.taken = i.numberOfResponses
+                newClass.numberOfPotentialResponses = i.numberOfPotentialResponses
                 newClass.isCourseEvaluated = i.isEvaluated
-                newClass.isPublic = i.isPublic
-                newClass.isSharedDeans = i
+                newClass.isPublicAccess = i.isPublic
+                newClass.isShareWithDeanChair = i.isShareWithDeanChair
                 semester.classes.append(newClass)
         s.append(semester)
         return HttpResponse(JSONRenderer.Render(s))
