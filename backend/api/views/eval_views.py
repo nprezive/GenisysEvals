@@ -74,7 +74,9 @@ def getMyEvals(request, pk=None):
                 newClass['isSharedDeans'] = i['isShareWithDeanChair']
                 semester['classes'].append(newClass)
         s.append(semester)
-        s = JSONRenderer().render(s)
+        b = {}
+        b['s'] = s
+        s = JSONRenderer().render(b)
         return HttpResponse(s)
     except Exception as e:
         return HttpResponse("An error occurred: {}".format(e.args[0]), status=418)
