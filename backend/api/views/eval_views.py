@@ -34,7 +34,7 @@ class EvalViewSet(BaseModelViewSet):
 def getMyEvals(request, pk=None):
     try:
         user = request.user.id
-        queryset = list(Evaluation.objects.filter(user=user).all().values()).sort(key=lambda x: x.id).all().values()
+        queryset = list(Evaluation.objects.filter(user=user).all().values()).sort(key=lambda x: x.semester_id).all().values()
         lastid = 0
         semester = {}
         s = []
