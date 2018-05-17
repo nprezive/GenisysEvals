@@ -1,3 +1,6 @@
+# GenisysEvals
+This is the capstone project I worked on at Weber State. Our team worked on the Evaluations section of the site, and I specifically worked on the My Reports / My Evals section of the site.
+
 ## Build Setup
 
 ### Source Code
